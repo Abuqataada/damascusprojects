@@ -405,12 +405,12 @@ body {
 }
 
 .carousel {
-  height: 100vh;
+  height: 90vh;
 }
 
 .carousel-background {
   position: relative;
-  height: 100vh;
+  height: 90vh;
   background-size: cover;
   background-position: center;
 }
@@ -512,7 +512,9 @@ body {
 
 
 
-
+#why-choose-us {
+  background-color: rgb(250, 238, 221);
+}
 #why-choose-us .card {
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -729,8 +731,8 @@ body {
   z-index: 2;
 }
 
-.section-header {
-  text-align: center;
+.section-header p {
+  text-align: left;
   margin-bottom: 50px;
 }
 
@@ -972,7 +974,7 @@ body {
 }
 
 .invest-carousel-section {
-  background: #f9f9f9;
+  background-color: #d8d8d8;
   padding: 60px 20px;
   color: #333;
 }
@@ -1160,7 +1162,7 @@ body {
 
 
 .goals-section {
-  background: #f9f9ff; /* bright, professional */
+  background-color: #eaecdc; /* bright, professional */
   padding: 80px 40px;  /* more padding inside */
   margin: 40px 0;      /* space above & below the section */
 }
@@ -1335,7 +1337,7 @@ body {
 
 
 .contact-section {
-  background: #f9f9ff;
+  background-color: #ebebff;
   padding: 80px 40px;
   margin: 50px 0;
 }

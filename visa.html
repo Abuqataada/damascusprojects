@@ -11,21 +11,6 @@
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-<div class="preloader">
-  <div class="logo-container">
-    <div class="logo-image">
-      <img src="assets/images/preloader.PNG" class="img-fluid rounded shadow" alt="AD">
-    </div>
-    <div class="overlay" id="image-overlay"></div>
-  </div>
-  
-  <div class="percentage" id="percentage">0%</div>
-  
-  <div class="loading-bar">
-    <div class="progress" id="progress-bar"></div>
-  </div>
-</div>
-
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 sticky-top">
   <div class="container">
@@ -74,12 +59,13 @@
 
 
 <!-- Hero -->
-<div class="page-header flex-middle" style="background-image: url(https://www.damascusprojects.com/wp-content/uploads/2025/06/abbc195752d95889-e1751718410667.jpeg);">
-    <div class="container">
-        <div class="inner flex-middle">
-            <h1 class="page-title">Visa Sponsorship</h1>
-            <ul id="breadcrumbs" class="breadcrumbs none-style">
-                <li><a href="https://www.damascusprojects.com">Home</a></li>
+<div class="modern-page-header" style="background-image: url(https://www.damascusprojects.com/wp-content/uploads/2025/06/abbc195752d95889-e1751718410667.jpeg);">
+    <div class="modern-overlay"></div>
+    <div class="modern-container">
+        <div class="modern-inner">
+            <h1 class="modern-page-title">Visa Sponsorship</h1>
+            <ul class="modern-breadcrumbs">
+                <li><a href="/">Home</a></li>
                 <li class="active">Visa Sponsorship</li>
             </ul>
         </div>
@@ -150,16 +136,19 @@
 
 
 <!-- Login Modal -->
-<!-- Login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header border-0 position-relative">
+      <div class="modal-header border-0 position-relative pt-4">
         <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body px-4 pb-4 pt-0">
         <div class="text-center mb-4">
-          <h2 class="fw-bold mb-1">Welcome back</h2>
+          <!-- Your Logo Here -->
+          <div class="logo-container mb-3">
+            <img src="assets/images/logo.png" alt="Damascus Projects Logo" class="logo-img">
+          </div>
+          <h2 class="fw-bold mb-1 text-gradient-primary">Welcome back</h2>
           <p class="text-muted">Sign in to access your projects</p>
         </div>
         <form>
@@ -168,7 +157,7 @@
           </div>
           <div class="mb-3 position-relative">
             <input type="password" class="form-control form-control-lg border-2 py-3" id="loginPassword" placeholder="Password">
-            <a href="#" class="position-absolute end-0 top-0 mt-3 me-3 small text-decoration-none">Forgot?</a>
+            <a href="#" class="position-absolute end-0 top-0 mt-3 me-3 small text-primary text-decoration-none">Forgot?</a>
           </div>
           <div class="d-flex justify-content-between align-items-center mb-4">
             <div class="form-check">
@@ -176,10 +165,10 @@
               <label class="form-check-label small" for="rememberMe">Remember me</label>
             </div>
           </div>
-          <button type="submit" class="btn btn-dark w-100 py-3 rounded-pill fw-semibold">Sign In</button>
+          <button type="submit" class="btn btn-primary w-100 py-3 rounded-pill fw-semibold shadow-primary">Sign In</button>
         </form>
         <div class="text-center mt-4">
-          <p class="text-muted small">Don't have an account? <a href="#" class="text-dark fw-semibold text-decoration-none" data-bs-toggle="modal" data-bs-target="#signupModal">Sign up</a></p>
+          <p class="text-muted small">Don't have an account? <a href="#" class="text-primary fw-semibold text-decoration-none" data-bs-toggle="modal" data-bs-target="#signupModal">Sign up</a></p>
         </div>
       </div>
     </div>
@@ -190,12 +179,16 @@
 <div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header border-0 position-relative">
+      <div class="modal-header border-0 position-relative pt-4">
         <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body px-4 pb-4 pt-0">
         <div class="text-center mb-4">
-          <h2 class="fw-bold mb-1">Create account</h2>
+          <!-- Your Logo Here -->
+          <div class="logo-container mb-3">
+            <img src="assets/images/logo.png" alt="Damascus Projects Logo" class="logo-img">
+          </div>
+          <h2 class="fw-bold mb-1 text-gradient-primary">Create account</h2>
           <p class="text-muted">Get started with Damascus Projects</p>
         </div>
         <form>
@@ -211,15 +204,16 @@
           <div class="mb-4">
             <input type="password" class="form-control form-control-lg border-2 py-3" placeholder="Confirm password">
           </div>
-          <button type="submit" class="btn btn-dark w-100 py-3 rounded-pill fw-semibold">Create Account</button>
+          <button type="submit" class="btn btn-primary w-100 py-3 rounded-pill fw-semibold shadow-primary">Create Account</button>
         </form>
         <div class="text-center mt-4">
-          <p class="text-muted small">Already have an account? <a href="#" class="text-dark fw-semibold text-decoration-none" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in</a></p>
+          <p class="text-muted small">Already have an account? <a href="#" class="text-primary fw-semibold text-decoration-none" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in</a></p>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
 
 
