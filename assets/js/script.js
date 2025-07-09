@@ -76,3 +76,24 @@ document.querySelectorAll('.solution-box').forEach(function(box) {
       }
     }
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const parent = this.parentElement;
+        parent.classList.toggle('active');
+    });
+});
