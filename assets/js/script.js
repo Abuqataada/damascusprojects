@@ -39,6 +39,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
+
+// Additional JS for enhanced functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.querySelector('#heroCarousel');
+  
+  // Pause carousel when hovering over controls
+  const controls = document.querySelectorAll('.carousel-control-prev, .carousel-control-next');
+  controls.forEach(control => {
+    control.addEventListener('mouseenter', () => {
+      const carouselInstance = bootstrap.Carousel.getInstance(carousel);
+      carouselInstance.pause();
+    });
+    control.addEventListener('mouseleave', () => {
+      const carouselInstance = bootstrap.Carousel.getInstance(carousel);
+      carouselInstance.cycle();
+    });
+  });
+  
+  // Add parallax effect to background images
+  carousel.addEventListener('mousemove', (e) => {
+    const items = document.querySelectorAll('.carousel-item.active .carousel-background');
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+    
+    items.forEach(item => {
+      item.style.transform = `scale(1.05) translate(${x * 20}px, ${y * 20}px)`;
+    });
+  });
+});
+
+
+
+
 document.querySelectorAll('.solution-box').forEach(function(box) {
     box.addEventListener('touchstart', function() {
       this.classList.add('touched');
