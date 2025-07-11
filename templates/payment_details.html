@@ -1,0 +1,13 @@
+{% extends "dashboard_base.html" %}
+{% block content %}
+<div class="container py-5">
+  <h3>Payment Details</h3>
+  <p>Pay ₦{{ "{:,.0f}".format(subscription.program.price) }} to:</p>
+  <ul>
+    <li><b>Bank:</b> Zenith Bank</li>
+    <li><b>Account Name:</b> Damascus Projects</li>
+    <li><b>Account Number:</b> 1234567890</li>
+  </ul>
+  <a href="{{ url_for('confirm_payment', sub_id=subscription.id) }}" class="btn btn-primary">I have made payment</a>
+</div>
+{% endblock %}

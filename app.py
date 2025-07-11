@@ -7,6 +7,7 @@ import os
 import secrets
 import string
 from werkzeug.utils import secure_filename
+from datetime import datetime, timedelta, timezone
 
 app = Flask(__name__)
 
@@ -35,13 +36,12 @@ login_manager.login_message_category = 'info'
 # --------------------------------------------------
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
-    full_name = db.Column(db.String(150), nullable=False)
+    username = db.Column(db.String(150), nullable=False)
+    first_name = db.Column(db.String(150), nullable=False)
+    last_name = db.Column(db.String(150), nullable=False)
     email = db.Column(db.String(150), unique=True, nullable=False)
     password_hash = db.Column(db.String(200), nullable=False)
     is_admin = db.Column(db.Boolean, default=False)
-    referrals = db.relationship('User', backref=db.backref('referrer', remote_side=[id]), lazy='dynamic')
-    referrer_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
-    referral_code = db.Column(db.String(20), unique=True)
     subscriptions = db.relationship('Subscription', backref='user', lazy=True)
     profile_picture = db.Column(db.String(200), nullable=True)
 
@@ -75,6 +75,8 @@ class Subscription(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     program_id = db.Column(db.Integer, db.ForeignKey('program.id'), nullable=False)
     is_paid = db.Column(db.Boolean, default=False)
+    payment_receipt = db.Column(db.String(200), nullable=True)  # uploaded filename
+    created_at = db.Column(db.DateTime, default=datetime.now(timezone.utc))
     status = db.Column(db.String(100), default='pending', nullable=False)
 
 # --------------------------------------------------
@@ -179,45 +181,75 @@ def hire():
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
-        full_name = request.form.get('full_name')
+        username = request.form.get('username')
+        first_name = request.form.get('first_name')
+        last_name = request.form.get('last_name')
         email = request.form.get('email')
         password = request.form.get('password')
         confirm_password = request.form.get('confirm_password')
-        program_slug = request.form.get('program')
-        referral_code_input = request.form.get('referral_code')
 
         if password != confirm_password:
             flash('Passwords do not match.', 'danger')
             return redirect(url_for('signup'))
 
-        program = Program.query.filter_by(slug=program_slug).first()
-        if not program:
-            flash('Invalid program selected.', 'danger')
-            return redirect(url_for('signup'))
-
-        user = User(full_name=full_name, email=email)
+        user = User(username=username, first_name=first_name, last_name=last_name, email=email)
         user.set_password(password)
-
-        if referral_code_input:
-            referrer = User.query.filter_by(referral_code=referral_code_input).first()
-            if referrer:
-                user.referrer_id = referrer.id
 
         db.session.add(user)
         db.session.commit()
-
-        # Generate referral code
-        user.referral_code = get_unique_referral_code()
-        db.session.commit()
-
-        subscription = Subscription(user_id=user.id, program_id=program.id)
-        db.session.add(subscription)
-        db.session.commit()
+        login_user(user)
 
         flash('Account created! Now login.', 'success')
-        return redirect(url_for('login'))
+        return redirect(url_for('choose_program'))
+    return render_template('signup.html')
+
+@app.route('/choose-program')
+@login_required
+def choose_program():
     programs = Program.query.all()
-    return render_template('signup.html', programs=programs)
+    return render_template('choose_program.html', programs=programs)
+
+@app.route('/program/<slug>')
+@login_required
+def program_detail(slug):
+    program = Program.query.filter_by(slug=slug).first_or_404()
+    return render_template('program_detail.html', program=program)
+
+@app.route('/subscribe/<slug>')
+@login_required
+def subscribe(slug):
+    program = Program.query.filter_by(slug=slug).first_or_404()
+    subscription = Subscription(user_id=current_user.id, program_id=program.id)
+    db.session.add(subscription)
+    db.session.commit()
+    return redirect(url_for('payment_details', sub_id=subscription.id))
+
+@app.route('/payment-details/<int:sub_id>')
+@login_required
+def payment_details(sub_id):
+    subscription = Subscription.query.get_or_404(sub_id)
+    return render_template('payment_details.html', subscription=subscription)
+
+@app.route('/confirm-payment/<int:sub_id>')
+@login_required
+def confirm_payment(sub_id):
+    return redirect(url_for('upload_receipt', sub_id=sub_id))
+
+@app.route('/upload-receipt/<int:sub_id>', methods=['GET', 'POST'])
+@login_required
+def upload_receipt(sub_id):
+    subscription = Subscription.query.get_or_404(sub_id)
+    if request.method == 'POST':
+        file = request.files['receipt']
+        if file:
+            filename = secure_filename(file.filename)
+            filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            file.save(filepath)
+            subscription.payment_receipt = filename
+            db.session.commit()
+            flash('Receipt uploaded successfully.', 'success')
+            return redirect(url_for('dashboard'))
+    return render_template('upload_receipt.html', subscription=subscription)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -227,7 +259,7 @@ def login():
         user = User.query.filter_by(email=email).first()
         if user and user.check_password(password):
             login_user(user)
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('choose_program'))
         flash('Invalid credentials', 'danger')
         return redirect(url_for('login'))
     return render_template('login.html')

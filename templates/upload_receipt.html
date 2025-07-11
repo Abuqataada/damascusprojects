@@ -1,0 +1,10 @@
+{% extends "dashboard_base.html" %}
+{% block content %}
+<div class="container py-5">
+  <h3>Upload Payment Receipt</h3>
+  <form method="post" enctype="multipart/form-data">
+    <input type="file" name="receipt" required>
+    <button type="submit" class="btn btn-success mt-3">Upload</button>
+  </form>
+</div>
+{% endblock %}
