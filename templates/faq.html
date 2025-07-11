@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Damascus Projects & Services{% endblock %}
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/faqs.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<div class="modern-page-header" style="background-image: url(https://www.damascusprojects.com/wp-content/uploads/2025/05/bg-pheader.jpg);">
+    <div class="modern-overlay"></div>
+    <div class="modern-container">
+        <div class="modern-inner">
+            <h1 class="modern-page-title">FAQs</h1>
+            <ul class="modern-breadcrumbs">
+                <li><a href="/">Home</a></li>
+                <li class="active">FAQs</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- intro Section -->
+<section class="faqs-main-section">
+    <div class="faqs-container">
+        <div class="faqs-header-block">
+            <span class="faqs-subtitle">// FAQ</span>
+            <h2 class="faqs-main-title">Read Most <br> Frequent Questions</h2>
+        </div>
+
+        <div class="faqs-grid">
+            <div class="faqs-column">
+                <div class="faq-item">
+                    <button class="faq-question">What is Damascus Projects?</button>
+                    <div class="faq-answer">
+                        <p><strong>Damascus Projects</strong> is a structured platform that supports idea owners, investors, buyers, sellers, and those seeking international or housing opportunities. It offers programs like project management, hire purchase, visa sponsorship, and housing via subscription-based systems.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Why do I need to subscribe?</button>
+                    <div class="faq-answer">
+                        <p>The subscription gives you access to exclusive forms, processes, and services tailored to your goals. It also ensures documentation, vetting, and professional handling of your data and applications.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How do I make a subscription payment?</button>
+                    <div class="faq-answer">
+                        <p>After clicking your desired program, payment details appear. You upload proof of payment and your subscription remains pending until confirmed.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What does the subscription fee cover?</button>
+                    <div class="faq-answer">
+                        <p>Your fee covers forms, expert analysis, project feasibility, risk mitigation, interviews, administration, and ongoing verification.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I apply for multiple programs?</button>
+                    <div class="faq-answer">
+                        <p>Yes. You can subscribe to multiple programs by completing separate subscriptions for each category.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="faqs-column">
+                <div class="faq-item">
+                    <button class="faq-question">What happens after I subscribe?</button>
+                    <div class="faq-answer">
+                        <p>Once payment is confirmed, our team reviews your data and assigns it to the right processing unit. You may be contacted for more details. Verified applicants move to onboarding or project alignment.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Is the subscription refundable?</button>
+                    <div class="faq-answer">
+                        <p>No. Subscription fees are non-refundable as they cover processing, administrative, and professional costs.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I edit my form after submission?</button>
+                    <div class="faq-answer">
+                        <p>You may request edits within 48 hours. Contact support for assistance.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Is my information safe?</button>
+                    <div class="faq-answer">
+                        <p>Absolutely. All data is confidential and used solely for program matching, analysis, and execution under Damascus Projects.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Is there a mobile app?</button>
+                    <div class="faq-answer">
+                        <p>Yes! Download the Damascus Projects app on Google Play or the Apple App Store to manage your applications, upload documents, and get real-time updates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends "dashboard_base.html" %}
+{% block title %}Dashboard - Damascus Projects{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row mb-4">
+        <div class="col">
+            <h3 class="text-muted mb-0">This is your personalized dashboard.</h3>
+        </div>
+    </div>
+
+    <!-- Referral Code -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Your Referral Code</h5>
+                    <div class="input-group">
+                        <input type="text" id="referralCode" class="form-control" value="{{ current_user.referral_code }}" readonly>
+                        <button class="btn btn-outline-primary" onclick="copyReferral()">Copy</button>
+                    </div>
+                    <small class="text-muted mt-2 d-block">Share your code to earn commissions.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Account Summary</h5>
+                <p>Balance: ₦{{ current_user.balance or 0 }}</p>
+                <p>Referrals: {{ current_user.total_referrals or 0 }}</p>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">My Programs</h5>
+                <p>You are subscribed to {{ current_user.programs|length }} programs.</p>
+                <a href="#" class="btn btn-primary btn-sm">View Programs</a>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Programs Overview -->
+    <div class="row">
+        {% for user_program in user_programs %}
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body d-flex flex-column">
+                    <div class="mb-3">
+                        <i class="{{ user_program.program.icon }} fa-2x text-primary"></i>
+                    </div>
+                    <h5 class="card-title">{{ user_program.program.name }}</h5>
+                    <p class="card-text mb-2">Price: ₦{{ "{:,}".format(user_program.program.price) }}</p>
+                    <p class="card-text small text-muted mb-4">
+                        Status: 
+                        {% if user_program.is_paid %}
+                            <span class="badge bg-success">Paid</span>
+                        {% else %}
+                            <span class="badge bg-warning text-dark">Pending Payment</span>
+                        {% endif %}
+                    </p>
+                    {% if not user_program.is_paid %}
+                    <a href="{{ url_for('make_payment', user_program_id=user_program.id) }}" class="mt-auto btn btn-outline-primary w-100">Make Payment</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
