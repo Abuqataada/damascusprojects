@@ -6,6 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import os
 import secrets
 import string
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 
@@ -13,6 +14,14 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'devkey')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///site.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+# configure upload folder
+app.config['UPLOAD_FOLDER'] = os.path.join('static', 'uploads')
+app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024  # 2MB
+
+# Ensure upload dir exists
+if not os.path.exists(app.config['UPLOAD_FOLDER']):
+    os.makedirs(app.config['UPLOAD_FOLDER'])
 
 # Initialize
 db = SQLAlchemy(app)
@@ -34,6 +43,12 @@ class User(db.Model, UserMixin):
     referrer_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
     referral_code = db.Column(db.String(20), unique=True)
     subscriptions = db.relationship('Subscription', backref='user', lazy=True)
+    profile_picture = db.Column(db.String(200), nullable=True)
+
+    def get_profile_picture_url(self):
+        if self.profile_picture:
+            return url_for('static', filename=f'uploads/{self.profile_picture}')
+        return url_for('static', filename='images/profile.png')
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -60,6 +75,7 @@ class Subscription(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     program_id = db.Column(db.Integer, db.ForeignKey('program.id'), nullable=False)
     is_paid = db.Column(db.Boolean, default=False)
+    status = db.Column(db.String(100), default='pending', nullable=False)
 
 # --------------------------------------------------
 # INIT DATA
@@ -92,6 +108,29 @@ def get_unique_referral_code():
         code = f"USR{generate_referral_code()}"
         if not User.query.filter_by(referral_code=code).first():
             return code
+
+@app.route('/upload-profile-picture', methods=['POST'])
+@login_required
+def upload_profile_picture():
+    file = request.files.get('profile_picture')
+    if file and file.filename != '':
+        filename = secure_filename(file.filename)
+        file_ext = os.path.splitext(filename)[1].lower()
+        if file_ext not in ['.jpg', '.jpeg', '.png', '.gif']:
+            flash('Invalid file format. Please upload an image.', 'danger')
+            return redirect(url_for('dashboard'))
+
+        # rename to user id to avoid conflicts
+        new_filename = f"user_{current_user.id}{file_ext}"
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], new_filename))
+        
+        current_user.profile_picture = new_filename
+        db.session.commit()
+        flash('Profile picture updated successfully.', 'success')
+    else:
+        flash('No file selected.', 'warning')
+
+    return redirect(url_for('dashboard'))
 
 # --------------------------------------------------
 # ROUTES
@@ -199,6 +238,15 @@ def dashboard():
     subscriptions = Subscription.query.filter_by(user_id=current_user.id).all()
     programs = Program.query.all()
     return render_template('dashboard.html', subscriptions=subscriptions, programs=programs)
+
+@app.route('/mark_payment_done', methods=['POST'])
+@login_required
+def mark_payment_done():
+    this_user = Subscription.query.filter_by(user_id=current_user.id).first()
+    this_user.status = 'pending'
+    db.session.commit()
+    flash('Thank you! Your payment is being processed.', 'success')
+    return redirect(url_for('dashboard'))
 
 @app.route('/logout')
 @login_required
