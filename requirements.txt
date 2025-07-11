@@ -6,3 +6,4 @@ flask_sqlalchemy
 Pillow
 Werkzeug
 gunicorn
+psycopg2
