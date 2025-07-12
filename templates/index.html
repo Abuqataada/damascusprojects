@@ -4,6 +4,7 @@
 
 {% block content %}
 <!-- Hero -->
+<!-- Hero Carousel -->
 <section id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
   <!-- Indicators -->
   <div class="carousel-indicators">
@@ -13,107 +14,101 @@
   </div>
 
   <div class="carousel-inner">
-    <!-- Slide 1: Innovator -->
+    <!-- Example Slide -->
     <div class="carousel-item active">
-      <div class="hero-slide" style="background-image: url('{{ url_for('static', filename='images/project_management.jpg') }}');">
+      <div class="hero-slide" style="background-image: url({{ url_for('static', filename='images/project_management.jpg') }});">
         <div class="overlay"></div>
         <div class="container">
-          <div class="carousel-caption text-start">
+          <div class="carousel-caption">
             <h1 class="animate__animated animate__fadeInDown">Innovator or Idea Owner</h1>
             <p class="animate__animated animate__fadeInUp">From Concept to Company — Let Damascus Projects Bring Your Business to Life.</p>
             <div class="mt-4">
-              <a href="{{ url_for('innovator') }}" class="btn btn-primary btn-lg me-3">Learn More</a>
-              <a href="#contact" class="btn btn-outline-light btn-lg">Contact Us</a>
+              <a href="{{ url_for('innovator') }}" class="btn btn-primary btn-lg me-3 mb-2">Learn More</a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Slide 2: Visa Sponsorship -->
+    <!-- Repeat similar for other slides -->
     <div class="carousel-item">
       <div class="hero-slide" style="background-image: url('{{ url_for('static', filename='images/visa.jpg') }}');">
         <div class="overlay"></div>
         <div class="container">
-          <div class="carousel-caption text-start">
+          <div class="carousel-caption">
             <h1 class="animate__animated animate__fadeInDown">Visa Sponsorship</h1>
             <p class="animate__animated animate__fadeInUp">From Application to Arrival — Trusted Visa Sponsorship by Damascus Projects.</p>
             <div class="mt-4">
-              <a href="{{ url_for('visa') }}" class="btn btn-primary btn-lg me-3">Learn More</a>
-              <a href="#contact" class="btn btn-outline-light btn-lg">Contact Us</a>
+              <a href="{{ url_for('visa') }}" class="btn btn-primary btn-lg me-3 mb-2">Learn More</a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Slide 3: Priority Housing -->
+    <!-- Repeat other slides... -->
+    <!-- ... Priority Housing -->
     <div class="carousel-item">
       <div class="hero-slide" style="background-image: url('{{ url_for('static', filename='images/shelter.png') }}');">
         <div class="overlay"></div>
         <div class="container">
-          <div class="carousel-caption text-start">
+          <div class="carousel-caption">
             <h1 class="animate__animated animate__fadeInDown">Priority Housing</h1>
             <p class="animate__animated animate__fadeInUp">Affordable. Reliable. Yours — Damascus Projects Makes Home Possible.</p>
             <div class="mt-4">
-              <a href="{{ url_for('housing') }}" class="btn btn-primary btn-lg me-3">Learn More</a>
-              <a href="#contact" class="btn btn-outline-light btn-lg">Contact Us</a>
+              <a href="{{ url_for('housing') }}" class="btn btn-primary btn-lg me-3 mb-2">Learn More</a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Slide 4: Project Management -->
-    <div class="carousel-item">
-      <div class="hero-slide" style="background-image: url('{{ url_for('static', filename='images/project_management.jpg') }}');">
-        <div class="overlay"></div>
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <h1 class="animate__animated animate__fadeInDown">Project Management</h1>
-            <p class="animate__animated animate__fadeInUp">Empowering Vision, Driving Results — Your Partner in Strategic Project Management.</p>
-            <div class="mt-4">
-              <a href="{{ url_for('project_management') }}" class="btn btn-primary btn-lg me-3">Learn More</a>
-              <a href="#contact" class="btn btn-outline-light btn-lg">Contact Us</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 5: Hire Purchase -->
+    <!-- Repeat Project Management, Hire Purchase, Investor similarly -->
     <div class="carousel-item">
       <div class="hero-slide" style="background-image: url('{{ url_for('static', filename='images/hire_purchase.jpg') }}');">
         <div class="overlay"></div>
         <div class="container">
-          <div class="carousel-caption text-start">
+          <div class="carousel-caption">
             <h1 class="animate__animated animate__fadeInDown">Hire Purchase</h1>
             <p class="animate__animated animate__fadeInUp">Empowering Growth Through Easy Access to Heavy Equipment — Farm & Construction Vehicles on Hire Purchase.</p>
             <div class="mt-4">
-              <a href="{{ url_for('hire') }}" class="btn btn-primary btn-lg me-3">Learn More</a>
-              <a href="#contact" class="btn btn-outline-light btn-lg">Contact Us</a>
+              <a href="{{ url_for('hire') }}" class="btn btn-primary btn-lg me-3 mb-2">Learn More</a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Slide 6: Investor -->
     <div class="carousel-item">
       <div class="hero-slide" style="background-image: url('{{ url_for('static', filename='images/investor.jpg') }}');">
         <div class="overlay"></div>
         <div class="container">
-          <div class="carousel-caption text-start">
+          <div class="carousel-caption">
             <h1 class="animate__animated animate__fadeInDown">Investor</h1>
             <p class="animate__animated animate__fadeInUp">Invest Smart, Grow Bigger — Damascus Projects Handles the Work, You Reap the Rewards.</p>
             <div class="mt-4">
-              <a href="{{ url_for('investor') }}" class="btn btn-primary btn-lg me-3">Learn More</a>
-              <a href="#contact" class="btn btn-outline-light btn-lg">Contact Us</a>
+              <a href="{{ url_for('investor') }}" class="btn btn-primary btn-lg me-3 mb-2">Learn More</a>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="carousel-item">
+      <div class="hero-slide" style="background-image: url('{{ url_for('static', filename='images/project_management.jpg') }}');">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1 class="animate__animated animate__fadeInDown">Project Management</h1>
+            <p class="animate__animated animate__fadeInUp">From Planning to Execution — Damascus Projects Turns Your Vision into Reality.</p>
+            <div class="mt-4">
+              <a href="{{ url_for('project_management') }}" class="btn btn-primary btn-lg me-3 mb-2">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- Controls -->
@@ -126,6 +121,8 @@
     <span class="visually-hidden">Next</span>
   </button>
 </section>
+
+
 
 
 <!-- Our Solution Section -->

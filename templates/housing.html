@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Priority Housing - Damascus Projects & Services{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/housing.css') }}">
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Hero -->
+<div class="modern-page-header" style="background-image: url(https://www.damascusprojects.com/wp-content/uploads/2025/06/premium_photo-1661425407118-e64871d1ab65-scaled.jpeg);">
+    <div class="modern-overlay"></div>
+    <div class="modern-container">
+        <div class="modern-inner">
+            <h1 class="modern-page-title">Priority Housing</h1>
+            <ul class="modern-breadcrumbs">
+                <li><a href="/">Home</a></li>
+                <li class="active">Priority Housing</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- intro Section -->
+<section class="two-column-section">
+  <div class="container">
+    <div class="row">
+      <div class="col left">
+        <h5>Damascus Projects</h5>
+        <h2>🏡 Own Your Dream Home with Flexible, Structured Payments</h2>
+        <p>
+          Damascus Projects offers a trusted path to <strong>affordable homeownership</strong> through a structured, installment-based housing initiative. Whether you’re looking to start small or build a family-sized home, this program is designed to make quality housing accessible — <strong>without the stress of full upfront payments</strong>.
+        </p>
+      </div>
+      <div class="col right">
+        <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/Penthouse-The-11-Different-Types-of-House-Design-in-Nigeria-with-pictures-bullionrise-consult-1024x576-1.webp" alt="Modern Nigerian house design">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- features Section -->
+<section class="features-section">
+  <div class="container">
+    <h2><strong>Why Choose Damascus Priority Housing?</strong></h2>
+    <ul class="feature-list">
+      <li><strong>Affordable monthly payments</strong> that match your income</li>
+      <li><strong>Personalized housing solutions</strong> based on your goals and budget</li>
+      <li><strong>Complete support</strong> from verification to building to handover</li>
+      <li><strong>Transparent process</strong> with no hidden charges or surprises</li>
+    </ul>
+    <blockquote>
+      Your journey to owning a home starts here. With <strong>Damascus Projects</strong>, it's not just a house — it's a legacy.
+    </blockquote>
+    <a href="{{ url_for('signup') }}" class="btn primary-btn">
+      Get Started
+    </a>
+  </div>
+</section>
+
+<!-- end features Section -->
+
+{%endblock %}

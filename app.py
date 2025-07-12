@@ -39,6 +39,9 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(150), nullable=False)
     first_name = db.Column(db.String(150), nullable=False)
     last_name = db.Column(db.String(150), nullable=False)
+    town = db.Column(db.String(150), nullable=True)
+    country = db.Column(db.String(150), nullable=True)
+    phone = db.Column(db.String(150), nullable=True)
     email = db.Column(db.String(150), unique=True, nullable=False)
     password_hash = db.Column(db.String(200), nullable=False)
     is_admin = db.Column(db.Boolean, default=False)
@@ -154,29 +157,29 @@ def faq():
 def contact():
     return render_template('contact.html')
 
-@app.route('/programs/project-management')
+@app.route('/project-management')
 def project_management():
-    return render_template('programs/project_management.html')
+    return render_template('project_management.html')
 
-@app.route('/programs/investor')
+@app.route('/investor')
 def investor():
-    return render_template('programs/investor.html')
+    return render_template('investor.html')
 
-@app.route('/programs/innovator')
+@app.route('/innovator')
 def innovator():
-    return render_template('programs/innovator.html')
+    return render_template('innovator.html')
 
-@app.route('/programs/visa')
+@app.route('/visa')
 def visa():
-    return render_template('programs/visa.html')
+    return render_template('visa.html')
 
-@app.route('/programs/housing')
+@app.route('/housing')
 def housing():
-    return render_template('programs/housing.html')
+    return render_template('housing.html')
 
-@app.route('/programs/hire')
+@app.route('/hire')
 def hire():
-    return render_template('programs/hire.html')
+    return render_template('hire.html')
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -215,6 +218,11 @@ def program_detail(slug):
     program = Program.query.filter_by(slug=slug).first_or_404()
     return render_template('program_detail.html', program=program)
 
+@app.route('/hire-purchase')
+@login_required
+def hire_purchase():
+    return render_template('hire_purchase.html')
+
 @app.route('/subscribe/<slug>')
 @login_required
 def subscribe(slug):
@@ -224,16 +232,39 @@ def subscribe(slug):
     db.session.commit()
     return redirect(url_for('payment_details', sub_id=subscription.id))
 
-@app.route('/payment-details/<int:sub_id>')
+@app.route('/payment-details/<program_slug>')
 @login_required
-def payment_details(sub_id):
-    subscription = Subscription.query.get_or_404(sub_id)
-    return render_template('payment_details.html', subscription=subscription)
+def payment_details(program_slug):
+    program = Program.query.filter_by(slug=program_slug).first_or_404()
+    subscription = Subscription(
+        user_id=current_user.id,
+        program_id=program.id,
+    )
+    db.session.add(subscription)
+    db.session.commit()
+    return render_template('payment_details.html', subscription=subscription, program=program)
 
-@app.route('/confirm-payment/<int:sub_id>')
+
+@app.route('/confirm-payment/<int:sub_id>' , methods=['GET', 'POST'])
 @login_required
 def confirm_payment(sub_id):
-    return redirect(url_for('upload_receipt', sub_id=sub_id))
+    if request.method == 'POST':
+        town = request.form.get('town')
+        country = request.form.get('country')
+        phone = request.form.get('phone')
+        subscription = Subscription.query.get_or_404(sub_id)
+        if subscription.is_paid:
+            flash('Payment already confirmed.', 'info')
+            return redirect(url_for('dashboard'))
+        subscription.paid_at = datetime.now(timezone.utc)
+        current_user.town = town
+        current_user.country = country
+        current_user.phone = phone
+        db.session.commit()
+        flash('Your payment is being processed! Thank you for subscribing.', 'success')
+        return redirect(url_for('upload_receipt', sub_id=sub_id))
+    
+    return "Request method not allowed.", 405
 
 @app.route('/upload-receipt/<int:sub_id>', methods=['GET', 'POST'])
 @login_required
@@ -280,12 +311,29 @@ def mark_payment_done():
     flash('Thank you! Your payment is being processed.', 'success')
     return redirect(url_for('dashboard'))
 
+@app.route('/cancel-subscription/<int:program_id>', methods=['GET', 'POST'])
+@login_required
+def cancel_subscription(program_id):
+    subscription = Subscription.query.filter_by(user_id=current_user.id, id=program_id).first()
+    if subscription:
+        db.session.delete(subscription)
+        db.session.commit()
+        flash('Subscription cancelled successfully.', 'success')
+    else:
+        flash('Subscription not found.', 'danger')
+    return redirect(url_for('dashboard'))
+
+
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
     flash('Logged out.', 'info')
     return redirect(url_for('login'))
+
+@app.route('/health')
+def health():
+    return "OK", 200
 
 with app.app_context():
     # Create tables and initial data
