@@ -187,3 +187,436 @@
     flex: 1 1 100%;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.investor-invitation-section {
+  padding: 5rem 0;
+  background-color: #ffffff;
+}
+
+.invitation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.invitation-content-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+}
+
+.invitation-text-col {
+  flex: 1;
+  padding: 2rem;
+}
+
+.invitation-image-col {
+  flex: 1;
+}
+
+.invitation-title {
+  font-size: 2rem;
+  color: #1a3a5f;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.invitation-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+.invitation-featured-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.invitation-featured-image:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 992px) {
+  .invitation-content-row {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+  
+  .invitation-text-col,
+  .invitation-image-col {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  .invitation-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .investor-invitation-section {
+    padding: 3rem 0;
+  }
+  
+  .invitation-title {
+    font-size: 1.5rem;
+  }
+  
+  .invitation-description {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.vision-statement-section {
+  padding: 5rem 0;
+  background-color: #d3e3f3;
+  text-align: center;
+}
+
+.vision-content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.vision-text-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.vision-main-heading {
+  font-size: 2.5rem;
+  color: #1a3a5f;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.vision-main-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #4a90e2;
+}
+
+.vision-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a5568;
+}
+
+.vision-description p {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .vision-statement-section {
+    padding: 3rem 0;
+  }
+  
+  .vision-main-heading {
+    font-size: 2rem;
+  }
+  
+  .vision-description {
+    font-size: 1rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .vision-main-heading {
+    font-size: 1.8rem;
+  }
+  
+  .vision-content-container {
+    padding: 0 1.5rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.investment-opportunities-section {
+  padding: 6rem 0;
+  background-color: #e9dddd;
+}
+
+.investment-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.investment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.investment-subheading {
+  font-size: 1.8rem;
+  color: #1a3a5f;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.investment-subheading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #4a90e2;
+}
+
+.investment-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a5568;
+}
+
+.investment-description p {
+  margin-bottom: 1.5rem;
+}
+
+.investment-featured-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.investment-featured-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 992px) {
+  .investment-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .investment-visual {
+    order: -1;
+  }
+  
+  .investment-opportunities-section {
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .investment-subheading {
+    font-size: 1.6rem;
+  }
+  
+  .investment-description {
+    font-size: 1rem;
+  }
+  
+  .investment-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .investment-subheading {
+    font-size: 1.4rem;
+  }
+  
+  .investment-opportunities-section {
+    padding: 3rem 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.marketing-strategy-section {
+  padding: 5rem 0;
+  background-color: #f8fafc;
+}
+
+.strategy-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.strategy-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4rem;
+}
+
+.strategy-text-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.strategy-visual-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.strategy-heading {
+  font-size: 1.8rem;
+  color: #1a3a5f;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.strategy-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #4a90e2, #2a5f9e);
+}
+
+.strategy-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a5568;
+}
+
+.strategy-description p {
+  margin-bottom: 1.5rem;
+}
+
+.strategy-featured-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.strategy-featured-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 992px) {
+  .strategy-content-wrapper {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+  
+  .strategy-text-content,
+  .strategy-visual-content {
+    width: 100%;
+  }
+  
+  .marketing-strategy-section {
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .strategy-heading {
+    font-size: 1.6rem;
+  }
+  
+  .strategy-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .marketing-strategy-section {
+    padding: 3rem 0;
+  }
+  
+  .strategy-container {
+    padding: 0 1.5rem;
+  }
+  
+  .strategy-heading {
+    font-size: 1.4rem;
+  }
+}
