@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}Investor - Damascus Projects & Services{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/inv.css') }}">
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Hero -->
+<div class="modern-page-header" style="background-image: url(https://www.damascusprojects.com/wp-content/uploads/2025/06/cropped-shot-multicultural-businessmen-handshake-600nw-700091587.webp);">
+    <div class="modern-overlay"></div>
+    <div class="modern-container">
+        <div class="modern-inner">
+            <h1 class="modern-page-title">Investor</h1>
+            <ul class="modern-breadcrumbs">
+                <li><a href="/">Home</a></li>
+                <li class="active">Investor</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- investor-intro Section -->
+<section class="investor-intro">
+  <div class="container">
+    <div class="row">
+      <div class="col text">
+        <h5>Damascus Projects</h5>
+        <h2>Who is an Investor?</h2>
+        <p>
+          An investor in the realm of business refers to either an individual or an institutional entity 
+          that allocates capital—whether in the form of money, resources, or assets—to a business venture 
+          with the anticipation of generating a financial return on that investment. This return can manifest 
+          in various ways, including profits, dividends, or an appreciation in the overall value of the business 
+          over time. Investors can range widely, from individuals committing modest amounts of their savings to 
+          colossal institutions possessing substantial financial capabilities. Notably, aspiring investors need 
+          not possess formal qualifications or a large initial capital to embark on their investment journey.
+        </p>
+      </div>
+      <div class="col image">
+        <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/smiling-group-diverse-businesspeople-going-600nw-1477775183.webp" 
+             alt="Group of diverse businesspeople" />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="about-damascus">
+  <div class="container">
+    <div class="row">
+      <div class="col image">
+        <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/ChatGPT-Image-Jun-9-2025-12_48_50-AM.png" 
+             alt="Community of business proprietors" />
+      </div>
+      <div class="col text">
+        <h2>About Damascus Projects</h2>
+        <p>
+          Damascus Projects is dedicated to cultivating a proactive community of intentional business 
+          proprietors and producers. In our current society, achieving “financial stability” often 
+          seems like a distant aspiration. While access to capital exists, we have observed a significant 
+          gap in the understanding of how to effectively utilize these funds to establish a foothold 
+          in the market and ultimately attain the coveted status of “financially stable.”
+        </p>
+        <p>
+          There are countless individuals harboring exceptional business ideas—some may only exist as concepts 
+          in their minds, while others have transitioned into fledgling enterprises. Many have sought financial 
+          backing yet encountered obstacles, and others who secured loans might find themselves paralyzed by the 
+          high risks associated with scaling their business. This fear is often compounded by the looming pressure 
+          of loan repayments, especially when lenders remain indifferent to the potential risks involved and market 
+          conditions do not promise the necessary support to ensure success.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

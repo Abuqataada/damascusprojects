@@ -1,0 +1,481 @@
+{% extends "base.html" %}
+
+{% block title %}Damascus Projects & Services{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<!-- Hero Carousel -->
+<section id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    {% for i in range(6) %}
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="{{ i }}" class="{% if i==0 %}active{% endif %}" aria-label="Slide {{ i+1 }}"></button>
+    {% endfor %}
+  </div>
+
+  <div class="carousel-inner">
+    <!-- Example Slide -->
+    <div class="carousel-item active">
+      <div class="hero-slide" style="background-image: url({{ url_for('static', filename='images/project_management.jpg') }});">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1 class="animate__animated animate__fadeInDown">Innovator or Idea Owner</h1>
+            <p class="animate__animated animate__fadeInUp">From Concept to Company — Let Damascus Projects Bring Your Business to Life.</p>
+            <div class="mt-4">
+              <a href="{{ url_for('innovator') }}" class="btn btn-primary btn-lg me-3 mb-2">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Repeat similar for other slides -->
+    <div class="carousel-item">
+      <div class="hero-slide" style="background-image: url('{{ url_for('static', filename='images/visa.jpg') }}');">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1 class="animate__animated animate__fadeInDown">Visa Sponsorship</h1>
+            <p class="animate__animated animate__fadeInUp">From Application to Arrival — Trusted Visa Sponsorship by Damascus Projects.</p>
+            <div class="mt-4">
+              <a href="{{ url_for('visa') }}" class="btn btn-primary btn-lg me-3 mb-2">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Repeat other slides... -->
+    <!-- ... Priority Housing -->
+    <div class="carousel-item">
+      <div class="hero-slide" style="background-image: url('{{ url_for('static', filename='images/shelter.png') }}');">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1 class="animate__animated animate__fadeInDown">Priority Housing</h1>
+            <p class="animate__animated animate__fadeInUp">Affordable. Reliable. Yours — Damascus Projects Makes Home Possible.</p>
+            <div class="mt-4">
+              <a href="{{ url_for('housing') }}" class="btn btn-primary btn-lg me-3 mb-2">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Repeat Project Management, Hire Purchase, Investor similarly -->
+    <div class="carousel-item">
+      <div class="hero-slide" style="background-image: url('{{ url_for('static', filename='images/hire_purchase.jpg') }}');">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1 class="animate__animated animate__fadeInDown">Hire Purchase</h1>
+            <p class="animate__animated animate__fadeInUp">Empowering Growth Through Easy Access to Heavy Equipment — Farm & Construction Vehicles on Hire Purchase.</p>
+            <div class="mt-4">
+              <a href="{{ url_for('hire') }}" class="btn btn-primary btn-lg me-3 mb-2">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="hero-slide" style="background-image: url('{{ url_for('static', filename='images/investor.jpg') }}');">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1 class="animate__animated animate__fadeInDown">Investor</h1>
+            <p class="animate__animated animate__fadeInUp">Invest Smart, Grow Bigger — Damascus Projects Handles the Work, You Reap the Rewards.</p>
+            <div class="mt-4">
+              <a href="{{ url_for('investor') }}" class="btn btn-primary btn-lg me-3 mb-2">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="hero-slide" style="background-image: url('{{ url_for('static', filename='images/project_management.jpg') }}');">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1 class="animate__animated animate__fadeInDown">Project Management</h1>
+            <p class="animate__animated animate__fadeInUp">From Planning to Execution — Damascus Projects Turns Your Vision into Reality.</p>
+            <div class="mt-4">
+              <a href="{{ url_for('project_management') }}" class="btn btn-primary btn-lg me-3 mb-2">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</section>
+
+
+
+
+<!-- Our Solution Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="solution-box p-5 bg-light mx-auto">
+      <h2 class="fw-bold mb-4 text-center">Our Solution</h2>
+      <p class="lead text-center">
+        At Damascus Projects, our platform serves as a dynamic hub where industry professionals, financial experts, and forward-thinking visionaries come together to collaborate on building innovative solutions. We focus on developing projects that are not only sustainable and scalable but also tailored to address real-world challenges. By merging technical expertise, strategic financial planning, and bold ideas, we create impactful ventures that deliver long-term value — both locally and globally. Our goal is to drive economic growth, enhance communities, and open doors to opportunities through smart, future-ready development.
+      </p>
+      <div class="text-center mt-4">
+        <a href="#" class="btn btn-primary">Read more</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why choose us section -->
+<section class="py-5" id="why-choose-us">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">Why Choose Us</h2>
+    <p class="text-muted mb-5">A trusted platform designed to deliver real, lasting impact.</p>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 bg-dark text-white shadow-sm">
+          <div class="card-body">
+            <div class="icon-circle">
+                    <i class="fas fa-lightbulb icon"></i>
+                </div>
+            <h5 class="card-title">All-in-One Solutions</h5>
+            <p class="card-text">
+              Damascus Projects offers a wide range of programs — from business management to housing, visa sponsorship, and investment — all under one trusted platform.
+            </p>
+            <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#signupModal">Get Started</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 bg-dark text-white shadow-sm">
+          <div class="card-body">
+            <div class="icon-circle">
+                    <i class="fas fa-credit-card icon"></i>
+                </div>
+            <h5 class="card-title">Flexible Payment Systems</h5>
+            <p class="card-text">
+              With options like hire purchase and installment-based housing, people can access life-changing services without financial pressure.
+            </p>
+            <a href="#contact" class="btn btn-outline-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 bg-dark text-white shadow-sm">
+          <div class="card-body">
+            <div class="icon-circle">
+                    <i class="fas fa-lightbulb icon"></i>
+                </div>
+            <h5 class="card-title">Empowering Real Growth</h5>
+            <p class="card-text">
+              Whether you're a farmer, entrepreneur, innovator, or traveler, Damascus Projects helps you move forward with real tools and structured support.
+            </p>
+            <a href="#contact" class="btn btn-outline-primary">Discover</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Investment section -->
+<section class="py-5 bg-light" id="investment">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      
+      <!-- Left Column: Text -->
+      <div class="col-lg-6">
+        <h2 class="fw-bold mb-4">
+          DAMASCUS PROJECTS: WHERE BUSINESS IDEAS FIND LIFE AND BACKING
+        </h2>
+        <p>
+          <span class="fw-bold" style="background: rgba(74,144,226,0.2); padding: 0 5px; border-radius: 3px;">
+            At Damascus Projects
+          </span>,
+          we believe that every great business starts with a single idea — and we're here to help turn those ideas into reality. Whether your concept is in agriculture, technology, manufacturing, real estate, logistics, education, or any other sector, we welcome it.
+        </p>
+        <p>
+          We provide a platform where <span class="fw-bold">innovative thinkers and aspiring entrepreneurs</span> can present their business ideas and connect with investors who are ready to support viable, scalable ventures.
+        </p>
+        <div class="p-3 my-4 border-start border-3 border-primary" style="background: rgba(74,144,226,0.1); border-radius: 0 8px 8px 0;">
+          <p class="mb-2"><strong>Our goal is to unlock opportunities</strong> by offering:</p>
+          <ul class="list-unstyled ms-3">
+            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>A structured system for evaluating & refining business ideas</li>
+            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Transparent & professional investment partnerships</li>
+            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Operational & management support where necessary</li>
+            <li><i class="fas fa-check text-primary me-2"></i>A shared vision for growth and long-term impact</li>
+          </ul>
+        </div>
+        <p>
+          If you have a business idea with potential, <span class="fw-bold">Damascus Projects</span> is ready to listen, support, and help it grow.
+        </p>
+      </div>
+
+      <!-- Right Column: Local Video -->
+      <div class="col-lg-6">
+        <div class="ratio ratio-16x9 shadow rounded overflow-hidden">
+          <video controls autoplay muted poster="{{ url_for('static', filename='images/video-cover.jpg') }}">
+            <source src="{{ url_for('static', filename='videos/invest.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p class="mt-3 fst-italic text-center text-muted">Watch our investment success stories</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Agriculture section -->
+<section class="agriculture-section">
+  <div class="video-background">
+    <div class="video-overlay"></div>
+    <!-- Replace <video> with YouTube iframe -->
+    <iframe 
+      src="https://www.youtube.com/embed/sNU4bzT9-4o?autoplay=1&mute=1&loop=1&playlist=sNU4bzT9-4o&controls=0&rel=0&modestbranding=1" 
+      frameborder="0" 
+      allowfullscreen
+      allow="autoplay; encrypted-media"
+    ></iframe>
+  </div>
+
+  <div class="content-container">
+    <div class="section-header">
+      <h2 class="section-title">Agricultural</h2>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <p><span class="highlight">At Damascus Projects</span>, we recognize agriculture as one of the most powerful tools for sustainable income and national development. Through our agricultural investment program, we connect resources, ideas, and investors to build thriving agribusinesses.</p>
+        
+        <p>Whether it's crop farming, livestock, agro-processing, or export-focused ventures, we help turn agricultural ideas into profitable realities.</p>
+        
+        <p>By partnering with idea owners and investors, Damascus Projects creates structured, scalable agricultural solutions that deliver real returns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Invest Technology -->
+<section class="py-5" id="about">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <img src="{{ url_for('static', filename='images/first.jpg') }}" class="img-fluid rounded shadow" alt="About Damascus Projects">
+      </div>
+      <div class="col-lg-6">
+        <h3>
+          Tech Investment with Damascus Projects: Powering the Future Through Innovation
+        </h3>
+        <p>
+          <span class="fw-bold" style="background: rgba(74,144,226,0.2); padding: 0 5px; border-radius: 3px;">
+            At Damascus Projects
+          </span>,
+          we believe that every great business starts with a single idea — and we're here to help turn those ideas into reality. Whether your concept is in agriculture, technology, manufacturing, real estate, logistics, education, or any other sector, we welcome it.
+        </p>
+        <p>
+          Technology is driving the future — and investing in it means positioning yourself at the center of progress. <span class="fw-bold" style="background: rgba(74,144,226,0.2); padding: 0 5px; border-radius: 3px;">At Damascus Projects</span>, we offer structured opportunities for individuals and groups to invest in innovative tech ideas and startups that are solving real problems in Africa and beyond.
+
+          From mobile apps and digital platforms to agri-tech, fintech, and health-tech, we support idea owners with bold, scalable visions. Our role is to bridge the gap between innovators and investors, ensuring that tech ideas are not only developed but also nurtured into profitable, long-term ventures.
+
+          <span class="fw-bold" style="background: rgba(74,144,226,0.2); padding: 0 5px; border-radius: 3px;">
+          Damascus Projects</span> gives you a chance to be part of the next big thing — while making an impact and earning real returns.
+          </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Work -->
+<section class="invest-carousel-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Some of the Businesses We Invest In at Damascus Projects</h2>
+      <p>At <strong>Damascus Projects</strong>, we invest in all kinds of businesses — from agriculture to tech, real estate, and beyond. Whether your idea is big or small, traditional or innovative, we believe in backing potential.<br>
+      Here are just a few of the many sectors we invest in:</p>
+    </div>
+
+    <!-- Swiper -->
+    <div class="swiper myInvestSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide invest-slide">
+          <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/freepik__the-style-is-candid-image-photography-with-natural__96107.jpeg" alt="Agriculture">
+          <h6>Agriculture & Agribusiness</h6>
+        </div>
+        <div class="swiper-slide invest-slide">
+          <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/istockphoto-2157040201-612x612-1.jpg" alt="Logistics">
+          <h6>Logistics</h6>
+        </div>
+        <div class="swiper-slide invest-slide">
+          <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/istockphoto-1440536906-612x612-1.jpg" alt="Healthcare">
+          <h6>Healthcare</h6>
+        </div>
+        <div class="swiper-slide invest-slide">
+          <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/istockphoto-1263424631-612x612-1.jpg" alt="Education">
+          <h6>Education</h6>
+        </div>
+        <div class="swiper-slide invest-slide">
+          <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/csrRenewables_Scheider_Elec_2021.jpeg" alt="Renewable Energy">
+          <h6>Renewable Energy & Sustainability</h6>
+        </div>
+        <div class="swiper-slide invest-slide">
+          <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/blog-images-manufacturing-line.jpg" alt="Manufacturing">
+          <h6>Manufacturing</h6>
+        </div>
+        <div class="swiper-slide invest-slide">
+          <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/625b10a58137b364b18df2ea_iStock-94179607.jpg" alt="Real Estate">
+          <h6>Real Estate</h6>
+        </div>
+      </div>
+      <!-- If you want navigation -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Purpose section -->
+<section class="purpose-section">
+  <div class="container">
+    <div class="section-header">
+      <span>// our purpose</span>
+      <h2>Changing Lives, One Project at a Time</h2>
+      <p>At <strong>Damascus Projects</strong>, we're not just building systems — we're building futures. Our programs solve real problems, provide access, and create growth. Here’s how we’ve impacted individuals, families, and businesses:</p>
+    </div>
+
+    <div class="purpose-cards">
+      <div class="card">
+        <div class="icon">
+          <svg viewBox="0 0 576 512"><path d="M259.3 17.8L194 150.2 ..."/></svg>
+        </div>
+        <h6>Helped Business Owners Focus and Grow</h6>
+        <p>By managing operations, we gave entrepreneurs freedom to grow while we handled the day-to-day.</p>
+      </div>
+      <div class="card">
+        <div class="icon">
+          <svg viewBox="0 0 576 512"><path d="M259.3 17.8L194 150.2 ..."/></svg>
+        </div>
+        <h6>Made Home Ownership Possible</h6>
+        <p>Through our Priority Shelter program, families live in homes they never thought they could afford.</p>
+      </div>
+      <div class="card">
+        <div class="icon">
+          <svg viewBox="0 0 576 512"><path d="M259.3 17.8L194 150.2 ..."/></svg>
+        </div>
+        <h6>Enabled Farmers to Own Heavy Machinery</h6>
+        <p>Farmers accessed tractors & equipment via hire purchase, boosting productivity without huge upfront costs.</p>
+      </div>
+      <div class="card">
+        <div class="icon">
+          <svg viewBox="0 0 576 512"><path d="M259.3 17.8L194 150.2 ..."/></svg>
+        </div>
+        <h6>Connected Investors to Profitable Ventures</h6>
+        <p>We structured opportunities for individuals to invest in real businesses & earn reliable returns.</p>
+      </div>
+      <div class="card">
+        <div class="icon">
+          <svg viewBox="0 0 576 512"><path d="M259.3 17.8L194 150.2 ..."/></svg>
+        </div>
+        <h6>Supported Bold Business Ideas</h6>
+        <p>Innovators, especially in agriculture & tech, found structure, support, & investment on our platform.</p>
+      </div>
+      <div class="card">
+        <div class="icon">
+          <svg viewBox="0 0 576 512"><path d="M259.3 17.8L194 150.2 ..."/></svg>
+        </div>
+        <h6>Provided Visa Sponsorship</h6>
+        <p>We fund 99% of visa processing costs with payback only after settling in your new country.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="goals-section">
+  <div class="goals-container">
+    <div class="goals-text">
+      <h4>🎯 Our Goals & Objectives: Driving Impact Through Purpose</h4>
+      <p>Damascus Project is a transformative initiative poised to cultivate a new generation of investors. Our vision is to empower every household across Africa to turn what may have once been simply a spark of an idea into thriving production companies and businesses. This ambitious endeavor aspires to create over 50 million start-ups and generate approximately 500 million jobs throughout the continent. To achieve this monumental goal, we recognize the necessity of not just relying on traditional and established investors; we must ignite the passion of new investors eager to make a difference.</p>
+      <p>Rather than importing investors from afar, the Damascus Project seeks to reshape the way our society understands investment. We believe becoming an investor doesn’t require a formal license, an advanced degree, or any specific qualifications. All you truly need is a small sum of money—an amount that is not crucial for your daily survival—and a knowledgeable adviser to guide you toward sound business opportunities that align with your risk appetite.</p>
+      <p>At the heart of Damascus Project lies our commitment to educating the African populace about the profound benefits of production over mere consumption. We aim to instill a deep understanding that a thriving society must produce more than it consumes. Our mission is to support the African community in harnessing its potential to produce its fundamental needs—be it nutritious food, essential medications, or clothing—thereby laying the foundation for self-sufficiency and prosperity. Together, we can turn dreams into reality and nurture a brighter future for all.</p>
+      <p>Damascus Projects seeks to bridge the gap between visionary idea owners and small-scale investors, transforming them into collaborative business partners. This initiative fosters a dynamic partnership where creativity meets financial backing, paving the way for shared success and innovative ventures. We aim to:</p>
+      <ul>
+        <li><strong>Empower Individuals and Communities</strong> through inclusive programs that promote self-sufficiency and growth.</li>
+        <li><strong>Support Sustainable Development</strong> by investing in projects that balance social impact with long-term economic return.</li>
+        <li><strong>Foster Entrepreneurial Innovation</strong> by welcoming and nurturing bold business ideas across various sectors.</li>
+        <li><strong>Ensure Transparent Execution</strong> by maintaining accountability, professionalism, and excellence in every project we manage.</li>
+      </ul>
+    </div>
+    <div class="goals-image">
+      <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/ChatGPT-Image-Jun-22-2025-01_30_23-AM.png" alt="Damascus Projects Goals">
+    </div>
+  </div>
+</section>
+
+
+<section class="download-section">
+  <div class="download-container">
+    <div class="download-text">
+      <h2>Unlock Opportunity — Install the Damascus Projects App Today!</h2>
+      <p>Take control of your future with one app that connects you to housing, business support, investment, visa sponsorship, and more.</p>
+      <p>No stress. No long processes. Just real solutions — right from your phone.</p>
+      <p>📲 Download now and start building your tomorrow.</p>
+    </div>
+    <div class="download-images">
+      <div class="top-image">
+        <img src="{{ url_for('static', filename='images/mobile.png') }}" alt="App Promo">
+      </div>
+      <div class="d-flex justify-content-center gap-3">
+          <a href="#"><img src="{{ url_for('static', filename='images/googleplay.png') }}" alt="Google Play" class="img-fluid" style="max-height: 40px;"></a>
+          <a href="#"><img src="{{ url_for('static', filename='images/applestore.png') }}" alt="App Store" class="img-fluid" style="max-height: 40px;"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-map">
+      <iframe loading="lazy"
+              src="https://maps.google.com/maps?q=Lagos&t=m&z=10&output=embed&iwloc=near"
+              title="Lagos"
+              aria-label="Lagos"></iframe>
+    </div>
+    <div class="contact-form">
+      <form class="custom-contact-form">
+        <div class="form-row">
+          <input type="text" name="first-name" placeholder="First Name *" required>
+          <input type="text" name="last-name" placeholder="Last Name *" required>
+        </div>
+        <div class="form-row">
+          <input type="email" name="your-email" placeholder="Email *" required>
+          <input type="tel" name="your-phone" placeholder="Phone *" required>
+        </div>
+        <textarea name="your-message" rows="4" placeholder="Enter Message"></textarea>
+        <div class="form-bottom">
+          <button type="submit">Send Message <i class="fas fa-arrow-right"></i></button>
+          <p class="form-cta">Call for Consultation <span><i class="fas fa-phone"></i> Enter your number</span></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

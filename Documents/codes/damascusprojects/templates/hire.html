@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Hire Purchase - Damascus Projects & Services{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/hire.css') }}">
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Hero -->
+<div class="modern-page-header" style="background-image: url(https://www.damascusprojects.com/wp-content/uploads/2025/06/Untitled-design-5-e1750545571916.png);">
+    <div class="modern-overlay"></div>
+    <div class="modern-container">
+        <div class="modern-inner">
+            <h1 class="modern-page-title">Hire Purchase</h1>
+            <ul class="modern-breadcrumbs">
+                <li><a href="/">Home</a></li>
+                <li class="active">Hire Purchase</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- intro Section -->
+<section class="hire-two-columns">
+    <div class="hire-container">
+        <div class="hire-text">
+            <h5>Damascus Projects</h5>
+            <h2>Own Heavy Equipment &amp; Vehicles with Flexible Payment Plans</h2>
+            <p>
+                At <strong>Damascus Projects</strong>, we connect verified buyers with equipment 
+                and vehicle owners through a secure <strong>hire purchase system</strong>. Whether you're looking to 
+                <strong>own construction or agricultural equipment</strong> through installment payments 
+                or you're a seller with assets to monetize, this program offers a 
+                <strong>transparent, trustworthy, and structured</strong> solution for all parties.
+            </p>
+        </div>
+        <div class="hire-image">
+            <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/Untitled-design-1-e1749416214449.png" alt="Hire Purchase Equipment">
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+<!-- benefits Section -->
+<section class="benefits-section">
+  <div class="container">
+    <h2>✅ Why Choose This Program?</h2>
+    <ul class="benefits-list">
+      <li><strong>Structured ownership</strong> through affordable and transparent payment plans</li>
+      <li><strong>Thorough screening process</strong> for both sellers and buyers</li>
+      <li><strong>Credit-building opportunities</strong> through reliable hire purchase terms</li>
+      <li><strong>Legal and administrative support</strong> from Damascus Projects for all transactions</li>
+    </ul>
+    <p>
+      Join Damascus Projects' Hire Purchase Program today and take a step closer to 
+      <strong>owning the equipment or vehicles you need to grow.</strong>
+    </p>
+    <a href="{{ url_for('signup') }}" class="btn-primary">Get Started</a>
+  </div>
+</section>
+
+{%endblock %}
+
+
+
+
+

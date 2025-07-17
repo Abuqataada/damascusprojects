@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Visa Sponsorship - Damascus Projects & Services{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/visa.css') }}">
+{% endblock %}
+{% block content %}
+
+<!-- Hero -->
+<div class="modern-page-header" style="background-image: url(https://www.damascusprojects.com/wp-content/uploads/2025/06/abbc195752d95889-e1751718410667.jpeg);">
+    <div class="modern-overlay"></div>
+    <div class="modern-container">
+        <div class="modern-inner">
+            <h1 class="modern-page-title">Visa Sponsorship</h1>
+            <ul class="modern-breadcrumbs">
+                <li><a href="/">Home</a></li>
+                <li class="active">Visa Sponsorship</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- innovator-intro Section -->
+<section class="visa-sponsorship-section">
+  <div class="container two-column">
+    <div class="text-column">
+      <h5>Visa Sponsorship</h5>
+      <h2>🌍 Gateway to Global Opportunities</h2>
+      <p><strong>Damascus Project Visa Sponsorship Program</strong> represents a distinctive opportunity for individuals aspiring to achieve global ambitions, particularly among African youth. This initiative is designed to alleviate the financial burdens associated with the visa application process by covering all related costs, as specified by your designated visa processing agent. The program accommodates both career and study visas, providing you with the necessary time for gradual reimbursement through a formal binding agreement that establishes our terms and reinforces our commitment to your success.</p>
+
+      <p>It is important to note that the Damascus Project Company is not a visa processing agency. However, we recognize the significant challenges faced by ambitious individuals from Africa seeking opportunities outside the continent. Consequently, we have partnered with legally registered visa processing agencies to support these aspirations effectively.</p>
+
+      <p>Who is eligible for this sponsorship? Our program is open to all individuals who seek sponsorship; however, we require a police clearance and a guarantor as part of the application process. We aim to facilitate this requirement, ensuring that conversations remain constructive and solutions-oriented.</p>
+
+      <p>Can applicants suggest a processing agency? Indeed, we welcome applicants to introduce their preferred agency, and we are open to discussions with any visa processing agency. We also have a roster of registered agencies with which we collaborate.</p>
+
+      <p>How do I get started? To initiate the process, interested individuals should register with the Damascus Project and subscribe to their preferred program. Following this, our customer service team will contact you to arrange an appointment at the office closest to your location. We look forward to assisting you in realizing your aspirations.</p>
+    </div>
+    <div class="image-column">
+      <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/Family-4.jpg" alt="Visa Sponsorship Family" width="100%" />
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- subscription-requirement Section -->
+<section class="subscription-requirement-section">
+  <div class="container two-column">
+    <div class="image-column">
+      <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/B088-Email-Subscription-small-1024x658.webp" alt="Subscription illustration" width="100%">
+    </div>
+    <div class="text-column">
+      <h2>💼 Subscription Requirement</h2>
+      <p>
+        Find out more from our app.
+      </p>
+
+      <div class="bottom-images d-flex justify-content-center gap-3">
+          <a href="#"><img src="{{ url_for('static', filename='images/googleplay.png') }}" alt="Google Play" class="img-fluid" style="max-height: 40px;"></a>
+          <a href="#"><img src="{{ url_for('static', filename='images/applestore.png') }}" alt="App Store" class="img-fluid" style="max-height: 40px;"></a>
+      </div>
+      <blockquote>
+        ⚠️ <strong>This subscription does not constitute a visa processing fee and is not associated with your visa processing fee. Instead, it serves as a token to support the due diligence and services provided by our office. Please note that this subscription is non-refundable.</strong>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

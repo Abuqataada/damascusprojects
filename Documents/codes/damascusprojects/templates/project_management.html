@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Project Management - Damascus Projects & Services{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pm.css') }}">
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Hero -->
+<div class="modern-page-header" style="background-image: url(https://www.damascusprojects.com/wp-content/uploads/2025/06/Project-management-certification-in-Nigeria-e1749386998203.webp);">
+    <div class="modern-overlay"></div>
+    <div class="modern-container">
+        <div class="modern-inner">
+            <h1 class="modern-page-title">Project Management</h1>
+            <ul class="modern-breadcrumbs">
+                <li><a href="/">Home</a></li>
+                <li class="active">Project Management</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- project vision Section -->
+<section class="unique-business-section">
+    <div class="container">
+        <div class="two-columns">
+            <div class="text-column">
+                <h5>Unique Business</h5>
+                <h2>Damascus Projects - Turn Your Vision Into a Fully Managed Venture</h2>
+                <h5><strong>Your Idea, Our Expertise - A Hands-Free Business Solution</strong></h5>
+                <p>
+                    Damascus Projects partners with individuals who have strong business ideas but limited time or technical capacity to run them. 
+                    We transform your concept into a <strong>well-managed, fully operational venture</strong> — handling everything from 
+                    <strong>setup to strategy, staffing, operations, and marketing</strong>.
+                </p>
+                <p>
+                    You can remain completely hands-off or choose to take control later when the business is stable. 
+                    Our team of professionals ensures your project becomes <strong>profitable, sustainable, and admired for excellence</strong>.
+                </p>
+                <blockquote>
+                    This program is perfect for <strong>visionaries, professionals, and investors</strong> who want a reliable structure to manage and grow their ideas.
+                </blockquote>
+            </div>
+            <div class="image-column">
+                <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/1728913954861.png" 
+                     alt="Turn Your Vision Into a Venture" />
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="how-it-works-section">
+    <div class="container">
+        <div class="two-columns">
+            <div class="image-column">
+                <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/ChatGPT-Image-Jun-7-2025-07_35_06-PM-e1749321390482-1024x592.png" 
+                     alt="How Damascus Projects Works" />
+            </div>
+            <div class="text-column">
+                <h2>📌 How It Works</h2>
+                <ol>
+                    <li><strong>Submit Your Project Idea</strong> - Fill the form to share your business vision.</li>
+                    <li><strong>Professional Review &amp; Assessment</strong> - We evaluate your idea and assign a team.</li>
+                    <li><strong>Development &amp; Execution</strong> - Our experts take charge of setup, staffing, and operations.</li>
+                    <li><strong>Monitoring &amp; Handover</strong> - Choose to stay hands-off or take over when ready.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
