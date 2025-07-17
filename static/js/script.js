@@ -48,17 +48,17 @@ document.addEventListener('DOMContentLoaded', function() {
       slidesPerView: 1,
       spaceBetween: 20,
       autoplay: {
-        delay: 3000, // 3 seconds between slides
-        disableOnInteraction: false, // continue autoplay after user interaction
+        delay: 3000,
+        disableOnInteraction: false,
       },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
       breakpoints: {
-        768: {
+        576: {
           slidesPerView: 2,
-          spaceBetween: 20
+          spaceBetween: 15
         },
         992: {
           slidesPerView: 3,
@@ -113,15 +113,3 @@ document.querySelectorAll('.faq-question').forEach(btn => {
       });
     }
   });
-
-
-
-
-
-  function copyReferral() {
-    var copyText = document.getElementById("referralCode");
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); 
-    document.execCommand("copy");
-    alert("Referral Code copied: " + copyText.value);
-}

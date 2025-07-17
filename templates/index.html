@@ -3,7 +3,6 @@
 {% block title %}Damascus Projects & Services{% endblock %}
 
 {% block content %}
-<div class="mt-0 pt-0">
 <!-- Hero -->
 <section id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
   <!-- Indicators - Made smaller for mobile -->
@@ -306,108 +305,115 @@
   </div>
 </section>
 
-<!-- Our Work -->
-<!-- Our Work -->
-<section class="invest-carousel-section py-5">
+
+
+<!-- Our Work Section -->
+<section class="invest-carousel-section">
   <div class="container">
-    <div class="section-header mb-4">
-      <h2 class="text-center mb-3">Some of the Businesses We Invest In at Damascus Projects</h2>
-      <p class="text-center mx-auto" style="max-width: 800px;">
-        At <strong>Damascus Projects</strong>, we invest in all kinds of businesses — from agriculture to tech, real estate, and beyond. Whether your idea is big or small, traditional or innovative, we believe in backing potential.<br>
-        Here are just a few of the many sectors we invest in:
+    <div class="section-header mb-4 text-center">
+      <h2 class="mb-3">Some of the Businesses We Invest In at Damascus Projects</h2>
+      <p class="mx-auto" style="max-width: 800px;">
+        At <strong>Damascus Projects</strong>, we invest in all kinds of businesses — from agriculture to tech, real estate, and beyond. Whether your idea is big or small, traditional or innovative, we believe in backing potential.
       </p>
     </div>
 
-    <!-- Swiper -->
-    <div class="swiper myInvestSwiper">
-      <div class="swiper-wrapper">
-        <!-- Agriculture -->
-        <div class="swiper-slide">
-          <div class="invest-slide d-flex flex-column flex-md-row align-items-center p-3">
-            <div class="invest-image-container mb-3 mb-md-0 me-md-3">
-              <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/freepik__the-style-is-candid-image-photography-with-natural__96107.jpeg" alt="Agriculture" class="img-fluid rounded">
-            </div>
-            <div class="invest-text-container">
-              <h6 class="mb-0 text-center text-md-start">Agriculture & Agribusiness</h6>
-            </div>
-          </div>
-        </div>
-
-        <!-- Logistics -->
-        <div class="swiper-slide">
-          <div class="invest-slide d-flex flex-column flex-md-row align-items-center p-3">
-            <div class="invest-image-container mb-3 mb-md-0 me-md-3">
-              <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/istockphoto-2157040201-612x612-1.jpg" alt="Logistics" class="img-fluid rounded">
-            </div>
-            <div class="invest-text-container">
-              <h6 class="mb-0 text-center text-md-start">Logistics</h6>
+    <!-- Swiper Container -->
+    <div class="swiper-container">
+      <div class="swiper myInvestSwiper">
+        <div class="swiper-wrapper">
+          <!-- Agriculture -->
+          <div class="swiper-slide">
+            <div class="invest-slide d-flex flex-column flex-md-row">
+              <div class="invest-image-container">
+                <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/freepik__the-style-is-candid-image-photography-with-natural__96107.jpeg" alt="Agriculture">
+              </div>
+              <div class="invest-text-container d-flex align-items-center">
+                <h6 class="text-center text-md-start w-100">Agriculture & Agribusiness</h6>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Healthcare -->
-        <div class="swiper-slide">
-          <div class="invest-slide d-flex flex-column flex-md-row align-items-center p-3">
-            <div class="invest-image-container mb-3 mb-md-0 me-md-3">
-              <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/istockphoto-1440536906-612x612-1.jpg" alt="Healthcare" class="img-fluid rounded">
-            </div>
-            <div class="invest-text-container">
-              <h6 class="mb-0 text-center text-md-start">Healthcare</h6>
+          <!-- Logistics -->
+          <div class="swiper-slide">
+            <div class="invest-slide d-flex flex-column flex-md-row">
+              <div class="invest-image-container">
+                <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/istockphoto-2157040201-612x612-1.jpg" alt="Logistics">
+              </div>
+              <div class="invest-text-container d-flex align-items-center">
+                <h6 class="text-center text-md-start w-100">Logistics</h6>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Education -->
-        <div class="swiper-slide">
-          <div class="invest-slide d-flex flex-column flex-md-row align-items-center p-3">
-            <div class="invest-image-container mb-3 mb-md-0 me-md-3">
-              <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/istockphoto-1263424631-612x612-1.jpg" alt="Education" class="img-fluid rounded">
-            </div>
-            <div class="invest-text-container">
-              <h6 class="mb-0 text-center text-md-start">Education</h6>
+          <!-- Healthcare -->
+          <div class="swiper-slide">
+            <div class="invest-slide d-flex flex-column flex-md-row">
+              <div class="invest-image-container">
+                <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/istockphoto-1440536906-612x612-1.jpg" alt="Healthcare">
+              </div>
+              <div class="invest-text-container d-flex align-items-center">
+                <h6 class="text-center text-md-start w-100">Healthcare</h6>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Renewable Energy -->
-        <div class="swiper-slide">
-          <div class="invest-slide d-flex flex-column flex-md-row align-items-center p-3">
-            <div class="invest-image-container mb-3 mb-md-0 me-md-3">
-              <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/csrRenewables_Scheider_Elec_2021.jpeg" alt="Renewable Energy" class="img-fluid rounded">
-            </div>
-            <div class="invest-text-container">
-              <h6 class="mb-0 text-center text-md-start">Renewable Energy & Sustainability</h6>
+          <!-- Education -->
+          <div class="swiper-slide">
+            <div class="invest-slide d-flex flex-column flex-md-row">
+              <div class="invest-image-container">
+                <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/istockphoto-1263424631-612x612-1.jpg" alt="Education">
+              </div>
+              <div class="invest-text-container d-flex align-items-center">
+                <h6 class="text-center text-md-start w-100">Education</h6>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Manufacturing -->
-        <div class="swiper-slide">
-          <div class="invest-slide d-flex flex-column flex-md-row align-items-center p-3">
-            <div class="invest-image-container mb-3 mb-md-0 me-md-3">
-              <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/blog-images-manufacturing-line.jpg" alt="Manufacturing" class="img-fluid rounded">
-            </div>
-            <div class="invest-text-container">
-              <h6 class="mb-0 text-center text-md-start">Manufacturing</h6>
+          <!-- Renewable Energy -->
+          <div class="swiper-slide">
+            <div class="invest-slide d-flex flex-column flex-md-row">
+              <div class="invest-image-container">
+                <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/csrRenewables_Scheider_Elec_2021.jpeg" alt="Renewable Energy">
+              </div>
+              <div class="invest-text-container d-flex align-items-center">
+                <h6 class="text-center text-md-start w-100">Renewable Energy & Sustainability</h6>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Real Estate -->
-        <div class="swiper-slide">
-          <div class="invest-slide d-flex flex-column flex-md-row align-items-center p-3">
-            <div class="invest-image-container mb-3 mb-md-0 me-md-3">
-              <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/625b10a58137b364b18df2ea_iStock-94179607.jpg" alt="Real Estate" class="img-fluid rounded">
+          <!-- Manufacturing -->
+          <div class="swiper-slide">
+            <div class="invest-slide d-flex flex-column flex-md-row">
+              <div class="invest-image-container">
+                <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/blog-images-manufacturing-line.jpg" alt="Manufacturing">
+              </div>
+              <div class="invest-text-container d-flex align-items-center">
+                <h6 class="text-center text-md-start w-100">Manufacturing</h6>
+              </div>
             </div>
-            <div class="invest-text-container">
-              <h6 class="mb-0 text-center text-md-start">Real Estate</h6>
+          </div>
+
+          <!-- Real Estate -->
+          <div class="swiper-slide">
+            <div class="invest-slide d-flex flex-column flex-md-row">
+              <div class="invest-image-container">
+                <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/625b10a58137b364b18df2ea_iStock-94179607.jpg" alt="Real Estate">
+              </div>
+              <div class="invest-text-container d-flex align-items-center">
+                <h6 class="text-center text-md-start w-100">Real Estate</h6>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <!-- Navigation Buttons -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </div>
   </div>
 </section>
+
+
 
 
 
@@ -471,76 +477,216 @@
 </section>
 
 
-<section class="goals-section">
-  <div class="goals-container">
-    <div class="goals-text">
-      <h4>🎯 Our Goals & Objectives: Driving Impact Through Purpose</h4>
-      <p>Damascus Project is a transformative initiative poised to cultivate a new generation of investors. Our vision is to empower every household across Africa to turn what may have once been simply a spark of an idea into thriving production companies and businesses. This ambitious endeavor aspires to create over 50 million start-ups and generate approximately 500 million jobs throughout the continent. To achieve this monumental goal, we recognize the necessity of not just relying on traditional and established investors; we must ignite the passion of new investors eager to make a difference.</p>
-      <p>Rather than importing investors from afar, the Damascus Project seeks to reshape the way our society understands investment. We believe becoming an investor doesn’t require a formal license, an advanced degree, or any specific qualifications. All you truly need is a small sum of money—an amount that is not crucial for your daily survival—and a knowledgeable adviser to guide you toward sound business opportunities that align with your risk appetite.</p>
-      <p>At the heart of Damascus Project lies our commitment to educating the African populace about the profound benefits of production over mere consumption. We aim to instill a deep understanding that a thriving society must produce more than it consumes. Our mission is to support the African community in harnessing its potential to produce its fundamental needs—be it nutritious food, essential medications, or clothing—thereby laying the foundation for self-sufficiency and prosperity. Together, we can turn dreams into reality and nurture a brighter future for all.</p>
-      <p>Damascus Projects seeks to bridge the gap between visionary idea owners and small-scale investors, transforming them into collaborative business partners. This initiative fosters a dynamic partnership where creativity meets financial backing, paving the way for shared success and innovative ventures. We aim to:</p>
-      <ul>
-        <li><strong>Empower Individuals and Communities</strong> through inclusive programs that promote self-sufficiency and growth.</li>
-        <li><strong>Support Sustainable Development</strong> by investing in projects that balance social impact with long-term economic return.</li>
-        <li><strong>Foster Entrepreneurial Innovation</strong> by welcoming and nurturing bold business ideas across various sectors.</li>
-        <li><strong>Ensure Transparent Execution</strong> by maintaining accountability, professionalism, and excellence in every project we manage.</li>
-      </ul>
-    </div>
-    <div class="goals-image">
-      <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/ChatGPT-Image-Jun-22-2025-01_30_23-AM.png" alt="Damascus Projects Goals">
-    </div>
-  </div>
-</section>
-
-
-<section class="download-section">
-  <div class="download-container">
-    <div class="download-text">
-      <h2>Unlock Opportunity — Install the Damascus Projects App Today!</h2>
-      <p>Take control of your future with one app that connects you to housing, business support, investment, visa sponsorship, and more.</p>
-      <p>No stress. No long processes. Just real solutions — right from your phone.</p>
-      <p>📲 Download now and start building your tomorrow.</p>
-    </div>
-    <div class="download-images">
-      <div class="top-image">
-        <img src="{{ url_for('static', filename='images/mobile.png') }}" alt="App Promo">
+<section class="goals-section py-5">
+  <div class="container">
+    <div class="row g-4 g-lg-5 align-items-center">
+      <!-- Text Content - Comes first in DOM for mobile -->
+      <div class="col-lg-6 order-2 order-lg-1">
+        <div class="goals-text">
+          <h2 class="display-5 fw-bold mb-4">🎯 Our Goals & Objectives: Driving Impact Through Purpose</h2>
+          
+          <div class="goals-content">
+            <p class="lead mb-4">Damascus Project is a transformative initiative poised to cultivate a new generation of investors. Our vision is to empower every household across Africa to turn ideas into thriving businesses.</p>
+            
+            <div class="d-none d-lg-block">
+              <p>This ambitious endeavor aspires to create over 50 million start-ups and generate approximately 500 million jobs throughout the continent. To achieve this, we must ignite the passion of new investors eager to make a difference.</p>
+              
+              <p>Rather than importing investors from afar, we seek to reshape how society understands investment. Becoming an investor doesn't require formal qualifications—just capital and guidance toward sound opportunities.</p>
+            </div>
+            
+            <button class="btn btn-outline-primary mb-4 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#moreGoalsContent">
+              Read More <i class="fas fa-chevron-down ms-2"></i>
+            </button>
+            
+            <div class="collapse d-lg-block" id="moreGoalsContent">
+              <p>At the heart of Damascus Project lies our commitment to educating about production over consumption. We aim to instill that a thriving society must produce more than it consumes.</p>
+              
+              <p>Our mission supports African communities in producing fundamental needs—food, medicine, clothing—laying foundations for self-sufficiency and prosperity.</p>
+              
+              <p>We bridge the gap between visionary idea owners and small-scale investors, transforming them into collaborative partners where creativity meets financial backing.</p>
+              
+              <h5 class="mt-4 mb-3 fw-bold">We aim to:</h5>
+              <ul class="list-unstyled">
+                <li class="mb-3 d-flex">
+                  <span class="me-2 text-primary">✓</span>
+                  <span><strong>Empower Individuals</strong> through inclusive programs for self-sufficiency</span>
+                </li>
+                <li class="mb-3 d-flex">
+                  <span class="me-2 text-primary">✓</span>
+                  <span><strong>Support Sustainable Development</strong> with socially impactful projects</span>
+                </li>
+                <li class="mb-3 d-flex">
+                  <span class="me-2 text-primary">✓</span>
+                  <span><strong>Foster Innovation</strong> by nurturing bold business ideas</span>
+                </li>
+                <li class="d-flex">
+                  <span class="me-2 text-primary">✓</span>
+                  <span><strong>Ensure Transparency</strong> through accountability in all projects</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="d-flex justify-content-center gap-3">
-          <a href="#"><img src="{{ url_for('static', filename='images/googleplay.png') }}" alt="Google Play" class="img-fluid" style="max-height: 40px;"></a>
-          <a href="#"><img src="{{ url_for('static', filename='images/applestore.png') }}" alt="App Store" class="img-fluid" style="max-height: 40px;"></a>
+      
+      <!-- Image - Shows after text on mobile -->
+      <div class="col-lg-6 order-1 order-lg-2">
+        <div class="goals-image rounded-4 overflow-hidden shadow-lg">
+          <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/ChatGPT-Image-Jun-22-2025-01_30_23-AM.png" 
+               alt="Damascus Projects Goals" 
+               class="img-fluid w-100 h-auto"
+               loading="lazy">
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="contact-section">
-  <div class="contact-container">
-    <div class="contact-map">
-      <iframe loading="lazy"
-              src="https://maps.google.com/maps?q=Lagos&t=m&z=10&output=embed&iwloc=near"
-              title="Lagos"
-              aria-label="Lagos"></iframe>
-    </div>
-    <div class="contact-form">
-      <form class="custom-contact-form">
-        <div class="form-row">
-          <input type="text" name="first-name" placeholder="First Name *" required>
-          <input type="text" name="last-name" placeholder="Last Name *" required>
+
+
+
+
+
+<section class="download-section py-5">
+  <div class="container">
+    <div class="row align-items-center g-4 g-lg-5">
+      <!-- Text Content - Top on mobile -->
+      <div class="col-lg-6 order-2 order-lg-1">
+        <div class="download-text text-center text-lg-start">
+          <h2 class="display-5 fw-bold mb-4">Unlock Opportunity — Install the Damascus Projects App Today!</h2>
+          
+          <div class="download-content">
+            <p class="lead mb-3">Take control of your future with one app connecting you to housing, business support, investment, visa sponsorship, and more.</p>
+            
+            <div class="d-none d-lg-block">
+              <p class="mb-3">No stress. No long processes. Just real solutions — right from your phone.</p>
+              <p class="text-primary fw-bold">📲 Download now and start building your tomorrow.</p>
+            </div>
+          </div>
+          
+          <!-- App Buttons - Center on mobile, left on desktop -->
+          <div class="d-flex justify-content-center justify-content-lg-start gap-3 mt-4 mt-lg-5">
+            <a href="#" class="app-download-link">
+              <img src="{{ url_for('static', filename='images/googleplay.png') }}" 
+                   alt="Get on Google Play" 
+                   class="img-fluid download-btn"
+                   loading="lazy">
+            </a>
+            <a href="#" class="app-download-link">
+              <img src="{{ url_for('static', filename='images/applestore.png') }}" 
+                   alt="Download on App Store" 
+                   class="img-fluid download-btn"
+                   loading="lazy">
+            </a>
+          </div>
         </div>
-        <div class="form-row">
-          <input type="email" name="your-email" placeholder="Email *" required>
-          <input type="tel" name="your-phone" placeholder="Phone *" required>
+      </div>
+      
+      <!-- Phone Image - Bottom on mobile -->
+      <div class="col-lg-6 order-1 order-lg-2">
+        <div class="download-image text-center">
+          <img src="{{ url_for('static', filename='images/mobile.png') }}" 
+               alt="Damascus Projects App" 
+               class="img-fluid phone-mockup"
+               loading="lazy">
         </div>
-        <textarea name="your-message" rows="4" placeholder="Enter Message"></textarea>
-        <div class="form-bottom">
-          <button type="submit">Send Message <i class="fas fa-arrow-right"></i></button>
-          <p class="form-cta">Call for Consultation <span><i class="fas fa-phone"></i> Enter your number</span></p>
-        </div>
-      </form>
+      </div>
     </div>
   </div>
 </section>
 
-</div>
+
+
+
+
+
+
+
+
+
+
+
+<section class="contact-section py-5">
+  <div class="container">
+    <div class="row g-4 g-lg-5">
+      <!-- Contact Form - Top on mobile -->
+      <div class="col-lg-6 order-2 order-lg-1">
+        <div class="contact-form p-4 p-lg-5 shadow-sm rounded-3 bg-white">
+          <h3 class="mb-4 text-center text-lg-start">Get in Touch</h3>
+          <form class="custom-contact-form">
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <input type="text" 
+                       name="first-name" 
+                       placeholder="First Name *" 
+                       class="form-control form-control-lg"
+                       required>
+              </div>
+              <div class="col-md-6">
+                <input type="text" 
+                       name="last-name" 
+                       placeholder="Last Name *" 
+                       class="form-control form-control-lg"
+                       required>
+              </div>
+            </div>
+            
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <input type="email" 
+                       name="your-email" 
+                       placeholder="Email *" 
+                       class="form-control form-control-lg"
+                       required>
+              </div>
+              <div class="col-md-6">
+                <input type="tel" 
+                       name="your-phone" 
+                       placeholder="Phone *" 
+                       class="form-control form-control-lg"
+                       required>
+              </div>
+            </div>
+            
+            <div class="mb-4">
+              <textarea name="your-message" 
+                        rows="4" 
+                        placeholder="Enter Message"
+                        class="form-control form-control-lg"></textarea>
+            </div>
+            
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+              <button type="submit" class="btn btn-primary btn-lg mb-3 mb-md-0">
+                Send Message <i class="fas fa-arrow-right ms-2"></i>
+              </button>
+              
+              <div class="text-center text-md-end">
+                <p class="form-cta mb-0">
+                  Call for Consultation 
+                  <a href="tel:+2349067377910" class="text-decoration-none d-inline-flex align-items-center ms-2">
+                    <i class="fas fa-phone me-2"></i> 09067377910
+                  </a>
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Map - Bottom on mobile -->
+      <div class="col-lg-6 order-1 order-lg-2">
+        <div class="contact-map ratio ratio-16x9 rounded-3 shadow-sm overflow-hidden">
+          <iframe loading="lazy"
+                  src="https://maps.google.com/maps?q=Lagos&t=m&z=10&output=embed&iwloc=near"
+                  title="Our Location in Lagos"
+                  aria-label="Map of Lagos"
+                  class="border-0"
+                  allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 {% endblock %}
