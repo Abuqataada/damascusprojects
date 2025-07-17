@@ -41,36 +41,32 @@ document.querySelectorAll('.solution-box').forEach(function(box) {
 
 
 
-// Initialize Swiper for the investment carousel
-// Ensure Swiper JS is loaded before this script
-// File: assets/js/script.js
-// --- a/file:///c%3A/Users/Administrator/Desktop/damascus_full_static_site/assets/js/script.js
-// +++ b/file:///c%3A/Users/Administrator/Desktop/damascus_full_static_site/assets/js/script.js
-// @@ -1,0 +1,22 @@
-//  assets/js/script.js
-//  This file contains JavaScript code for the Damascus Projects & Services website.  
-  var swiper = new Swiper(".myInvestSwiper", {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-      delay: 3000, // 3 seconds
-      disableOnInteraction: false,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2
+
+// Initialize Swiper with autoplay
+document.addEventListener('DOMContentLoaded', function() {
+    new Swiper('.myInvestSwiper', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      autoplay: {
+        delay: 3000, // 3 seconds between slides
+        disableOnInteraction: false, // continue autoplay after user interaction
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 20
+        }
       }
-    }
+    });
   });
-
-
-
-
 
 
 
