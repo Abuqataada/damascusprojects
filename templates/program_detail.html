@@ -230,7 +230,11 @@ document.addEventListener("DOMContentLoaded", function() {
         programContent.innerHTML = programs[programSlug];
     } else if(programSlug === "hire") {
         window.location.href = "{{ url_for('hire_purchase') }}";
-    }else {
+    } else if(programSlug === "hireb") {
+        window.location.href = "{{ url_for('hire_purchase') }}";
+    } else if(programSlug === "hires") {
+        window.location.href = "{{ url_for('hire_purchase') }}";
+    } else {
         programContent.innerHTML = `<p class="text-danger">Invalid program selected or missing program identifier. Please go back and choose again.</p>`;
     }
 });
