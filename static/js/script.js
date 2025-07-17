@@ -1,3 +1,29 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const navbar = document.querySelector('.navbar');
+  
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Additional JS for enhanced functionality
 document.addEventListener('DOMContentLoaded', function() {
   const carousel = document.querySelector('#heroCarousel');

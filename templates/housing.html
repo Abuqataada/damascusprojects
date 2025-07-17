@@ -2,7 +2,7 @@
 
 {% block title %}Priority Housing - Damascus Projects & Services{% endblock %}
 {% block head %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/housing.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/house.css') }}">
 {% endblock %}
 
 {% block content %}
@@ -28,18 +28,30 @@
 
 
 <!-- intro Section -->
-<section class="two-column-section">
-  <div class="container">
-    <div class="row">
-      <div class="col left">
-        <h5>Damascus Projects</h5>
-        <h2>🏡 Own Your Dream Home with Flexible, Structured Payments</h2>
-        <p>
-          Damascus Projects offers a trusted path to <strong>affordable homeownership</strong> through a structured, installment-based housing initiative. Whether you’re looking to start small or build a family-sized home, this program is designed to make quality housing accessible — <strong>without the stress of full upfront payments</strong>.
-        </p>
+<section class="home-hero-section">
+  <div class="home-hero-container">
+    <div class="home-hero-grid">
+      <div class="home-hero-text">
+        <span class="home-hero-pretitle">Damascus Projects</span>
+        <h1 class="home-hero-title">🏡 Own Your Dream Home with Flexible, Structured Payments</h1>
+        <div class="home-hero-description">
+          <p>Damascus Projects offers a trusted path to <strong>affordable homeownership</strong> through a structured, installment-based housing initiative. Whether you're looking to start small or build a family-sized home, this program is designed to make quality housing accessible — <strong>without the stress of full upfront payments</strong>.</p>
+        </div>
       </div>
-      <div class="col right">
-        <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/Penthouse-The-11-Different-Types-of-House-Design-in-Nigeria-with-pictures-bullionrise-consult-1024x576-1.webp" alt="Modern Nigerian house design">
+      <div class="home-hero-visual">
+        <img loading="eager" 
+             decoding="async" 
+             width="1024" 
+             height="576" 
+             src="https://www.damascusprojects.com/wp-content/uploads/2025/06/Penthouse-The-11-Different-Types-of-House-Design-in-Nigeria-with-pictures-bullionrise-consult-1024x576-1.webp" 
+             class="home-hero-image" 
+             alt="Modern luxury penthouse in Nigeria with spacious balcony and contemporary design"
+             srcset="https://www.damascusprojects.com/wp-content/uploads/2025/06/Penthouse-The-11-Different-Types-of-House-Design-in-Nigeria-with-pictures-bullionrise-consult-1024x576-1.webp 1024w, 
+                    https://www.damascusprojects.com/wp-content/uploads/2025/06/Penthouse-The-11-Different-Types-of-House-Design-in-Nigeria-with-pictures-bullionrise-consult-1024x576-1-300x169.webp 300w, 
+                    https://www.damascusprojects.com/wp-content/uploads/2025/06/Penthouse-The-11-Different-Types-of-House-Design-in-Nigeria-with-pictures-bullionrise-consult-1024x576-1-768x432.webp 768w, 
+                    https://www.damascusprojects.com/wp-content/uploads/2025/06/Penthouse-The-11-Different-Types-of-House-Design-in-Nigeria-with-pictures-bullionrise-consult-1024x576-1-720x405.webp 720w, 
+                    https://www.damascusprojects.com/wp-content/uploads/2025/06/Penthouse-The-11-Different-Types-of-House-Design-in-Nigeria-with-pictures-bullionrise-consult-1024x576-1-600x338.webp 600w" 
+             sizes="(max-width: 1024px) 100vw, 1024px" />
       </div>
     </div>
   </div>
@@ -52,21 +64,41 @@
 
 
 <!-- features Section -->
-<section class="features-section">
-  <div class="container">
-    <h2><strong>Why Choose Damascus Priority Housing?</strong></h2>
-    <ul class="feature-list">
-      <li><strong>Affordable monthly payments</strong> that match your income</li>
-      <li><strong>Personalized housing solutions</strong> based on your goals and budget</li>
-      <li><strong>Complete support</strong> from verification to building to handover</li>
-      <li><strong>Transparent process</strong> with no hidden charges or surprises</li>
-    </ul>
-    <blockquote>
-      Your journey to owning a home starts here. With <strong>Damascus Projects</strong>, it's not just a house — it's a legacy.
-    </blockquote>
-    <a href="{{ url_for('signup') }}" class="btn primary-btn">
-      Get Started
-    </a>
+<section class="housing-benefits-section">
+  <div class="benefits-container">
+    <div class="benefits-content">
+      <h2 class="benefits-heading"><strong>Why Choose Damascus Priority Housing?</strong></h2>
+      
+      <ul class="benefits-list">
+        <li class="benefit-item">
+          <p><strong>Affordable monthly payments</strong> that match your income</p>
+        </li>
+        <li class="benefit-item">
+          <p><strong>Personalized housing solutions</strong> based on your goals and budget</p>
+        </li>
+        <li class="benefit-item">
+          <p><strong>Complete support</strong> from verification to building to handover</p>
+        </li>
+        <li class="benefit-item">
+          <p><strong>Transparent process</strong> with no hidden charges or surprises</p>
+        </li>
+      </ul>
+      
+      <blockquote class="housing-quote">
+        <p>Your journey to owning a home starts here. With <strong>Damascus Projects</strong>, it's not just a house — it's a legacy.</p>
+      </blockquote>
+      
+      <div class="cta-button-container">
+        <a href="{{ url_for('signup') }}" class="housing-cta-button">
+          <span class="button-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 447.243 447.243">
+              <path d="M420.361,192.229c-1.83-0.297-3.682-0.434-5.535-0.41H99.305l6.88-3.2c6.725-3.183,12.843-7.515,18.08-12.8l88.48-88.48c11.653-11.124,13.611-29.019,4.64-42.4c-10.441-14.259-30.464-17.355-44.724-6.914c-1.152,0.844-2.247,1.764-3.276,2.754l-160,160C-3.119,213.269-3.13,233.53,9.36,246.034c0.008,0.008,0.017,0.017,0.025,0.025l160,160c12.514,12.479,32.775,12.451,45.255-0.063c0.982-0.985,1.899-2.033,2.745-3.137c8.971-13.381,7.013-31.276-4.64-42.4l-88.32-88.64c-4.695-4.7-10.093-8.641-16-11.68l-9.6-4.32h314.24c16.347,0.607,30.689-10.812,33.76-26.88C449.654,211.494,437.806,195.059,420.361,192.229z"/>
+            </svg>
+          </span>
+          <span class="button-text">Get Started</span>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 

@@ -64,118 +64,315 @@
 
 
 
-.two-column-section {
-    padding: 80px 0;
+.home-hero-section {
+  padding: 7rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2f6 100%);
+  position: relative;
+  overflow: hidden;
 }
 
-.two-column-section .container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 40px;
+.home-hero-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.two-column-section .col {
-    flex: 1 1 50%;
+.home-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
 }
 
-.two-column-section .col.left h5 {
-    font-size: 16px;
-    color: #888;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.home-hero-text {
+  position: relative;
+  z-index: 2;
 }
 
-.two-column-section .col.left h2 {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 20px;
+.home-hero-pretitle {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #4a90e2;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(74, 144, 226, 0.1);
+  border-radius: 50px;
 }
 
-.two-column-section .col.left p {
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-.two-column-section .col.right img {
-    width: 100%;
-    border-radius: 8px;
-    display: block;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .two-column-section .container {
-        flex-direction: column;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.features-section {
-  padding: 80px 20px;
-  text-align: center;
-  background-color: #d8d6d6;
-}
-
-.features-section h2 {
-  font-size: 32px;
+.home-hero-title {
+  font-size: 2.75rem;
+  line-height: 1.2;
+  color: #1a3a5f;
+  margin-bottom: 1.8rem;
   font-weight: 700;
-  margin-bottom: 30px;
 }
 
-.features-section .feature-list {
+.home-hero-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #4a5568;
+  margin-bottom: 2.5rem;
+}
+
+.home-hero-description strong {
+  color: #1a3a5f;
+  font-weight: 600;
+  position: relative;
+}
+
+.home-hero-description strong::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #4a90e2, #2a5f9e);
+  border-radius: 2px;
+}
+
+.home-hero-visual {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.home-hero-visual:hover {
+  transform: perspective(1000px) rotateY(0deg) translateY(-10px);
+  box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.2);
+}
+
+.home-hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.home-hero-visual:hover .home-hero-image {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1200px) {
+  .home-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .home-hero-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .home-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .home-hero-visual {
+    max-width: 600px;
+    margin: 0 auto;
+    order: -1;
+    transform: none;
+  }
+  
+  .home-hero-section {
+    padding: 5rem 0;
+  }
+  
+  .home-hero-title {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  
+  .home-hero-pretitle {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+  }
+  
+  .home-hero-description {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-hero-title {
+    font-size: 1.9rem;
+  }
+  
+  .home-hero-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-hero-section {
+    padding: 3.5rem 0;
+  }
+  
+  .home-hero-title {
+    font-size: 1.7rem;
+  }
+  
+  .home-hero-pretitle {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.housing-benefits-section {
+  padding: 5rem 0;
+  background-color: #f8fafc;
+}
+
+.benefits-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.benefits-heading {
+  font-size: 2.2rem;
+  color: #1a3a5f;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+}
+
+.benefits-heading strong {
+  color: #1a3a5f;
+}
+
+.benefits-list {
+  margin-bottom: 3rem;
   list-style: none;
-  padding: 0;
-  margin-bottom: 30px;
+  padding-left: 1rem;
 }
 
-.features-section .feature-list li {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 15px;
-  text-align: left;
+.benefit-item {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a5568;
+  margin-bottom: 1.2rem;
+  position: relative;
+  padding-left: 2rem;
 }
 
-.features-section blockquote {
-  font-size: 20px;
+.benefit-item::before {
+  content: "•";
+  color: #4a90e2;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.benefit-item strong {
+  color: #1a3a5f;
+  font-weight: 600;
+}
+
+.housing-quote {
+  font-size: 1.2rem;
   font-style: italic;
-  color: #444;
-  margin: 30px auto;
-  max-width: 700px;
+  color: #1a3a5f;
+  text-align: center;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  border-left: 4px solid #4a90e2;
+  background-color: rgba(74, 144, 226, 0.1);
+  max-width: 600px;
 }
 
-.btn.primary-btn {
+.housing-quote strong {
+  color: #4a90e2;
+}
+
+.cta-button-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.housing-cta-button {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  background: #0073e6;
-  color: #fff;
-  padding: 14px 28px;
-  border-radius: 6px;
-  font-size: 18px;
+  padding: 0.8rem 1.8rem;
+  background-color: #4a90e2;
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.btn.primary-btn:hover {
-  background: #005bb5;
+.housing-cta-button:hover {
+  background-color: #3a7bc8;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
 }
 
-.btn.primary-btn svg {
-  fill: #fff;
+.button-icon {
+  margin-right: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.button-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: white;
+}
+
+@media (max-width: 768px) {
+  .benefits-heading {
+    font-size: 1.8rem;
+  }
+  
+  .benefit-item {
+    font-size: 1rem;
+  }
+  
+  .housing-quote {
+    font-size: 1.1rem;
+    margin: 2rem auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .housing-benefits-section {
+    padding: 3rem 0;
+  }
+  
+  .benefits-container {
+    padding: 0 1.5rem;
+  }
+  
+  .benefits-heading {
+    font-size: 1.6rem;
+  }
+  
+  .benefit-item {
+    padding-left: 1.5rem;
+  }
 }

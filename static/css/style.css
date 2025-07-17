@@ -8,11 +8,77 @@ html, body {
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  position: relative;
+  position: static;
 }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Custom container styling to match Bootstrap's container */
+  .nav-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  @media (min-width: 576px) {
+    .nav-container {
+      max-width: 540px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .nav-container {
+      max-width: 720px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .nav-container {
+      max-width: 960px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .nav-container {
+      max-width: 1140px;
+    }
+  }
+  
+  @media (min-width: 1400px) {
+    .nav-container {
+      max-width: 1320px;
+    }
+  }
+
+  /* Ensure sticky navbar works */
+  .sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+  }
 
 
 
