@@ -40,6 +40,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(150), nullable=False)
     first_name = db.Column(db.String(150), nullable=False)
     last_name = db.Column(db.String(150), nullable=False)
+    user_code = db.Column(db.String(150), nullable=False)
     town = db.Column(db.String(150), nullable=True)
     country = db.Column(db.String(150), nullable=True)
     phone = db.Column(db.String(150), nullable=True)
@@ -94,7 +95,7 @@ def create_initial_programs():
     programs = [
         {'name': 'Project Management', 'slug': 'project_management', 'price': 50000, 'icon': 'fas fa-tasks'},
         {'name': 'Investor', 'slug': 'investor', 'price': 499999, 'icon': 'fas fa-chart-line'},
-        {'name': 'Innovator or Idea Owner', 'slug': 'innovator', 'price': 21500, 'icon': 'fas fa-lightbulb'},
+        {'name': 'Joint Venture', 'slug': 'joint_venture', 'price': 21500, 'icon': 'fas fa-lightbulb'},
         {'name': 'Visa Sponsorship', 'slug': 'visa', 'price': 37500, 'icon': 'fas fa-passport'},
         {'name': 'Priority Housing', 'slug': 'housing', 'price': 50000, 'icon': 'fas fa-home'},
         {'name': 'Hire Purchase (Buyer)', 'slug': 'hireb', 'price': 21000, 'icon': 'fas fa-truck-pickup'},
@@ -105,6 +106,16 @@ def create_initial_programs():
             db.session.add(Program(**prog))
     db.session.commit()
 
+def generate_referral_code(length=8):
+    chars = string.ascii_uppercase + string.digits
+    return ''.join(secrets.choice(chars) for _ in range(length))
+
+def get_unique_referral_code():
+    while True:
+        code = f"DP-{generate_referral_code()}"
+        if not User.query.filter_by(referral_code=code).first():
+            return code
+        
 @app.route('/upload-profile-picture', methods=['POST'])
 @login_required
 def upload_profile_picture():
@@ -156,9 +167,9 @@ def project_management():
 def investor():
     return render_template('investor.html')
 
-@app.route('/innovator')
-def innovator():
-    return render_template('innovator.html')
+@app.route('/venture')
+def venture():
+    return render_template('venture.html')
 
 @app.route('/visa')
 def visa():
@@ -179,7 +190,7 @@ def apply_program(slug):
         "project_management": "applications/pm.html",
         "visa": "applications/visa.html",
         "investor": "applications/investor.html",
-        "innovator": "applications/innovator.html",
+        "venture": "applications/venture.html",
         "housing": "applications/housing.html",
         "hireb": "applications/hire-buyer.html",
         "hires": "applications/hire-seller.html"
@@ -207,6 +218,7 @@ def signup():
 
         user = User(username=username, first_name=first_name, last_name=last_name, email=email)
         user.set_password(password)
+        user.user_code = get_unique_referral_code()
 
         db.session.add(user)
         db.session.commit()
