@@ -1,9 +1,9 @@
-asposestorage
+alembic
 Flask
 Flask_Login
+flask_mail
 Flask_Migrate
 flask_sqlalchemy
 Pillow
+SQLAlchemy
 Werkzeug
-gunicorn
-psycopg2

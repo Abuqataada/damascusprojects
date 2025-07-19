@@ -10,13 +10,25 @@ import secrets
 import string
 import random
 from werkzeug.utils import secure_filename
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
+from urllib.parse import quote_plus
 
 app = Flask(__name__)
 
 # Configuration
+db_password = quote_plus(os.getenv('DB_PASSWORD', 'sample_password'))
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'devkey')
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///site.db')
+# Choose database based on environment
+if os.getenv('FLASK_ENV') == 'production':
+    app.config['SQLALCHEMY_DATABASE_URI'] = (
+        f"postgresql://{os.getenv('DB_USER')}:{db_password}@"
+        f"{os.getenv('DB_HOST')}:"
+        f"{os.getenv('DB_PORT')}/"
+        f"{os.getenv('DB_NAME')}"
+    )
+else:
+    # Default to SQLite for development
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # configure upload folder
@@ -27,7 +39,7 @@ app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024  # 2MB
 app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER', 'mail.damascusprojects.com')
 app.config['MAIL_PORT'] = int(os.getenv('MAIL_PORT', 465))
 app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME', 'noreply@damascusprojects.com')
-app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD', 'LvH?$[M{kqv??v+t')  # Replace with actual password
+app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD', 'sample_password')
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True  # Important for port 465
 app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_USERNAME', 'noreply@damascusprojects.com')
