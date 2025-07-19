@@ -7,3 +7,6 @@ flask_sqlalchemy
 Pillow
 SQLAlchemy
 Werkzeug
+gunicorn
+psycopg2-binary
+requests
