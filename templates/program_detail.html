@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <h5>Investors Program</h5>
 <p>₦499,999.00</p>
 <p>This subscription empowers Damascus Projects to orchestrate daily operations that are instrumental in meticulously analyzing and selecting the most appropriate projects tailored to your needs. This fund serves as a vital resource, enabling comprehensive security assessments as you navigate the journey of identifying and establishing a business. It encompasses detailed feasibility studies along with a suite of robust measures designed to mitigate risks and safeguard against potential setbacks, ensuring a pathway to success that is as secure as it is promising.</p>
-<form method="POST" action="{{ url_for('payment_details', program_slug='project_management') }}">
+<form method="POST" action="{{ url_for('payment_details', program_slug='investor') }}">
                     <!-- Terms Checkbox -->
                     <div class="mb-4 form-check">
                         <input type="checkbox" class="form-check-input" id="terms" name="terms" required>
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <li>Individuals planning relocation with valid migration intentions</li>
 </ul>
 <p>With Damascus Projects, your global vision gets the structure, guidance, and support it needs to become a reality.</p>
-<form method="POST" action="{{ url_for('payment_details', program_slug='project_management') }}">
+<form method="POST" action="{{ url_for('payment_details', program_slug='visa') }}">
                     <!-- Terms Checkbox -->
                     <div class="mb-4 form-check">
                         <input type="checkbox" class="form-check-input" id="terms" name="terms" required>
@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 </form>
 <p class="mt-2">Category: Subscriptions</p>
         `,
-        "venture": `
+        "joint_venture": `
 <h4>Joint Venture Program</h4>
 <p>🔍 Purchasing this subscription will provide access to Joint Venture Program</p>
 <div class="mb-3">
@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <li>Anyone with an idea seeking to professionally develop and launch it</li>
 </ul>
 <p>Subscribe now and let your vision gain the clarity, protection, and roadmap it needs to flourish.</p>
-<form method="POST" action="{{ url_for('payment_details', program_slug='project_management') }}">
+<form method="POST" action="{{ url_for('payment_details', program_slug='joint_venture') }}">
                     <!-- Terms Checkbox -->
                     <div class="mb-4 form-check">
                         <input type="checkbox" class="form-check-input" id="terms" name="terms" required>

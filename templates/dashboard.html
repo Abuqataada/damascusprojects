@@ -57,11 +57,15 @@
                                 <a href="{{ url_for('payment_details', program_slug='investor') }}" class="btn btn-sm btn-outline-primary">Investor</a>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <a href="{{ url_for('payment_details', program_slug='venture') }}" class="btn btn-sm btn-outline-primary">Joint Venture</a>
+                                <a href="{{ url_for('payment_details', program_slug='joint_venture') }}" class="btn btn-sm btn-outline-primary">Joint Venture</a>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 
-                                <a href="{{ url_for('payment_details', program_slug='hire_purchase') }}" class="btn btn-sm btn-outline-primary">Hire Purchase</a>
+                                <a href="{{ url_for('payment_details', program_slug='hire_purchase') }}" 
+                                    class="btn btn-sm btn-outline-primary"
+                                    onclick="event.preventDefault(); new bootstrap.Modal(document.getElementById('comingSoonModal')).show();">
+                                    Hire Purchase
+                                </a>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 <a href="{{ url_for('payment_details', program_slug='housing') }}" class="btn btn-sm btn-outline-primary">Housing</a>

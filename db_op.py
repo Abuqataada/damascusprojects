@@ -1,12 +1,12 @@
 from sqlalchemy import text
 from app import db, app, Program
 
-"""def add_user_code_column():
+def add_user_code_column():
     try:
         with db.engine.connect() as connection:
             # For PostgreSQL/SQLite/MySQL
-            connection.execute(text("ALTER TABLE user ADD COLUMN user_code VARCHAR(20)"))
-            
+            connection.execute(text("ALTER TABLE subscription ADD COLUMN order_number VARCHAR(100)"))
+
             # For SQL Server:
             # connection.execute(text("ALTER TABLE users ADD user_code VARCHAR(20)"))
             
@@ -18,7 +18,7 @@ from app import db, app, Program
 
 
 with app.app_context():
-    add_user_code_column()"""
+    add_user_code_column()
 
 
 
@@ -40,7 +40,7 @@ with app.app_context():
 
 
 
-
+"""
 def remove_program(slug):
     try:
         program = Program.query.filter_by(slug=slug).first()
@@ -59,4 +59,4 @@ def remove_program(slug):
 
 with app.app_context():
     success, message = remove_program('innovator')
-    print(message)
+    print(message)"""
