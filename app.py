@@ -16,20 +16,25 @@ from urllib.parse import quote_plus
 app = Flask(__name__)
 
 # Configuration
+# Secure password encoding
 db_password = quote_plus(os.getenv('DB_PASSWORD', 'sample_password'))
+
+# Flask app secret key
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'devkey')
 
 # Choose database based on environment
 if os.getenv('FLASK_ENV') == 'production':
+    db_user = os.getenv('DB_USER', 'cpaneluser_damascus_developer')
+    db_host = os.getenv('DB_HOST', 'localhost')
+    db_port = os.getenv('DB_PORT', '5432')
+    db_name = os.getenv('DB_NAME', 'cpaneluser_damascus_app')
+
     app.config['SQLALCHEMY_DATABASE_URI'] = (
-        f"postgresql://{os.getenv('DB_USER')}:{db_password}@"
-        f"{os.getenv('DB_HOST')}:"
-        f"{os.getenv('DB_PORT')}/"
-        f"{os.getenv('DB_NAME')}"
+        f"postgresql+psycopg2://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
     )
 else:
-    # Default to SQLite for development
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # configure upload folder
