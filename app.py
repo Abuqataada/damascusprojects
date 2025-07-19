@@ -18,6 +18,7 @@ app = Flask(__name__)
 # Configuration
 db_password = quote_plus(os.getenv('DB_PASSWORD', 'sample_password'))
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'devkey')
+
 # Choose database based on environment
 if os.getenv('FLASK_ENV') == 'production':
     app.config['SQLALCHEMY_DATABASE_URI'] = (
@@ -57,6 +58,28 @@ login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # --------------------------------------------------
 # MODELS
 # --------------------------------------------------
@@ -86,10 +109,6 @@ class User(db.Model, UserMixin):
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
-
 
 class Program(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -109,6 +128,30 @@ class Subscription(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.now(timezone.utc))
     status = db.Column(db.String(100), default='pending', nullable=False)
     order_number = db.Column(db.String(100), unique=True, nullable=True)
+
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # --------------------------------------------------
 # INIT DATA
