@@ -9,7 +9,7 @@
 
 
 <!-- Hero -->
-<div class="modern-page-header" style="background-image: url(https://www.damascusprojects.com/wp-content/uploads/2025/06/cropped-shot-multicultural-businessmen-handshake-600nw-700091587.webp);">
+<div class="modern-page-header" style="background-image: url('static/images/header_pics.jpg');">
     <div class="modern-overlay"></div>
     <div class="modern-container">
         <div class="modern-inner">
@@ -42,7 +42,7 @@
         </p>
       </div>
       <div class="col image">
-        <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/smiling-group-diverse-businesspeople-going-600nw-1477775183.webp" 
+        <img src="{{ url_for('static', filename='images/investor1.webp') }}" 
              alt="Group of diverse businesspeople" />
       </div>
     </div>
@@ -54,7 +54,7 @@
   <div class="container">
     <div class="row">
       <div class="col image">
-        <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/ChatGPT-Image-Jun-9-2025-12_48_50-AM.png" 
+        <img src="{{ url_for('static', filename='images/investor2.jpg') }}" 
              alt="Community of business proprietors" />
       </div>
       <div class="col text">
@@ -101,11 +101,11 @@
              decoding="async" 
              width="600" 
              height="400" 
-             src="https://www.damascusprojects.com/wp-content/uploads/2025/06/cropped-shot-multicultural-businessmen-handshake-600nw-700091587.webp" 
+             src="{{ url_for('static', filename='images/investor3.jpg') }}" 
              class="invitation-featured-image" 
              alt="Multicultural businessmen shaking hands during business meeting"
-             srcset="https://www.damascusprojects.com/wp-content/uploads/2025/06/cropped-shot-multicultural-businessmen-handshake-600nw-700091587.webp 600w, 
-                    https://www.damascusprojects.com/wp-content/uploads/2025/06/cropped-shot-multicultural-businessmen-handshake-600nw-700091587-300x200.webp 300w" 
+             srcset="{{ url_for('static', filename='images/investor3.jpg') }} 600w, 
+                    {{ url_for('static', filename='images/investor3.jpg') }} 300w" 
              sizes="(max-width: 600px) 100vw, 600px" />
       </div>
     </div>
@@ -156,13 +156,9 @@
              decoding="async" 
              width="612" 
              height="408" 
-             src="https://www.damascusprojects.com/wp-content/uploads/2025/06/istockphoto-1189302091-612x612-1.jpg" 
+             src="{{ url_for('static', filename='images/investor4.jpg') }}" 
              class="investment-featured-image" 
-             alt="Business professionals discussing investment opportunities"
-             srcset="https://www.damascusprojects.com/wp-content/uploads/2025/06/istockphoto-1189302091-612x612-1.jpg 612w, 
-                    https://www.damascusprojects.com/wp-content/uploads/2025/06/istockphoto-1189302091-612x612-1-300x200.jpg 300w, 
-                    https://www.damascusprojects.com/wp-content/uploads/2025/06/istockphoto-1189302091-612x612-1-600x400.jpg 600w" 
-             sizes="(max-width: 612px) 100vw, 612px" />
+             alt="Business professionals discussing investment opportunities"/>
       </div>
     </div>
   </div>
@@ -193,11 +189,11 @@
              decoding="async" 
              width="390" 
              height="262" 
-             src="https://www.damascusprojects.com/wp-content/uploads/2025/06/black-company-representative-suit-makes-260nw-1758910289-e1749413668587.webp" 
+             src="{{ url_for('static', filename='images/investor5.jpg') }}" 
              class="strategy-featured-image" 
              alt="Marketing professional presenting business strategy"
-             srcset="https://www.damascusprojects.com/wp-content/uploads/2025/06/black-company-representative-suit-makes-260nw-1758910289-e1749413668587.webp 390w, 
-                    https://www.damascusprojects.com/wp-content/uploads/2025/06/black-company-representative-suit-makes-260nw-1758910289-e1749413668587-300x202.webp 300w" 
+             srcset="{{ url_for('static', filename='images/investor5.jpg') }} 390w, 
+                    {{ url_for('static', filename='images/investor5.jpg') }} 300w" 
              sizes="(max-width: 390px) 100vw, 390px" />
       </div>
     </div>

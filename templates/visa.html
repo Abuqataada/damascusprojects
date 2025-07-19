@@ -7,7 +7,7 @@
 {% block content %}
 
 <!-- Hero -->
-<div class="modern-page-header" style="background-image: url(https://www.damascusprojects.com/wp-content/uploads/2025/06/abbc195752d95889-e1751718410667.jpeg);">
+<div class="modern-page-header" style="background-image: url('static/images/header_pics.jpg');">
     <div class="modern-overlay"></div>
     <div class="modern-container">
         <div class="modern-inner">
@@ -42,7 +42,7 @@
       <p>How do I get started? To initiate the process, interested individuals should register with the Damascus Project and subscribe to their preferred program. Following this, our customer service team will contact you to arrange an appointment at the office closest to your location. We look forward to assisting you in realizing your aspirations.</p>
     </div>
     <div class="image-column">
-      <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/Family-4.jpg" alt="Visa Sponsorship Family" width="100%" />
+      <img src="{{ url_for('static', filename='images/visa1.jpg') }}" alt="Visa Sponsorship Family" width="100%" />
     </div>
   </div>
 </section>
@@ -57,7 +57,7 @@
 <section class="subscription-requirement-section">
   <div class="container two-column">
     <div class="image-column">
-      <img src="https://www.damascusprojects.com/wp-content/uploads/2025/06/B088-Email-Subscription-small-1024x658.webp" alt="Subscription illustration" width="100%">
+      <img src="{{ url_for('static', filename='images/subscribe.jpg') }}" alt="Subscription illustration" width="100%">
     </div>
     <div class="text-column">
       <h2>💼 Subscription Requirement</h2>
